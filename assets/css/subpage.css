@@ -55,3 +55,15 @@ body[data-page="program"] .care-process strong{font-size:18px}
 body[data-page="program"] .care-process p{margin:12px 0 0;color:#58676a;font-size:14px;line-height:1.75}
 body[data-page="program"] .cta-band{border-top:1px solid var(--line)}
 @media(max-width:800px){body[data-page="program"] main>section{padding-left:22px;padding-right:22px}body[data-page="program"] .program-hero{min-height:400px;padding-top:80px}body[data-page="program"] .program-hero h1{font-size:34px}body[data-page="program"] .section-head{display:block}body[data-page="program"] .section-head .body-copy{margin-top:24px}body[data-page="program"] .selection-guide{grid-template-columns:1fr;gap:26px}body[data-page="program"] .selection-guide li{grid-template-columns:1fr;gap:4px}body[data-page="program"] .care-process{grid-template-columns:1fr}body[data-page="program"] .care-process li{border-right:0;border-bottom:1px solid var(--line)}body[data-page="program"] .care-process li:last-child{border-bottom:0}}
+
+/* Shared subpage alignment and color discipline */
+.sub-hero{min-height:390px}.sub-hero h1{font-size:clamp(38px,3.5vw,54px)}
+.flow-grid,.area-grid,.price-grid,.archive-grid,.info-grid,.journey-grid{gap:0;background:#fff}
+.panel,.archive-card,.time-card,.combo-grid article,.journey-grid article{background:#fff!important}
+.archive-card{border:1px solid var(--line);border-top:2px solid var(--blue)}
+.long-term-section,.skin-booster-section{background:#fff!important;color:var(--ink)!important}
+.recommend-badge{background:var(--navy)!important}.comparison-head,.formula b,.combo-grid article>p b{background:rgba(113,135,141,.1)!important}
+body[data-page="program"] main>section{width:min(100%,1440px);padding-left:48px;padding-right:48px}
+body[data-page="program"] .program-hero{min-height:420px}
+body[data-page="program"] .selection-guide,body[data-page="program"] .care-process,.choice-flow,.comparison-wrap{border-left:0;border-right:0}
+@media(max-width:800px){body[data-page="program"] main>section{padding-left:22px;padding-right:22px}.sub-hero h1{font-size:36px}}
