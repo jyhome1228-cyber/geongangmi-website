@@ -22,7 +22,7 @@ main{background:#fff}
 .button.primary{background:var(--navy);border-color:var(--navy)}
 .site-footer{padding:54px max(32px,calc((100vw - var(--content))/2 + 48px)) 30px;background:#fff;color:var(--ink);border-top:1px solid var(--line)}
 .site-footer .brand img{filter:none;opacity:1}.site-footer small{color:var(--blue)}
-@media(max-width:800px){main{padding-top:72px}.site-header{height:72px;padding:0 22px}.brand img{width:132px}.mobile-nav{background:#fff;padding-left:22px;padding-right:22px}.section-pad{padding:68px 22px}.site-footer{padding:44px 22px 100px}.mobile-cta{background:#fff}.mobile-cta a:last-child{background:var(--navy)}}
+@media(max-width:800px){main{padding-top:72px}.site-header{height:72px;padding:0 22px}.brand img{width:132px}.menu-button{color:var(--navy);-webkit-text-fill-color:var(--navy)}.mobile-nav{background:#fff;padding-left:22px;padding-right:22px}.section-pad{padding:68px 22px}.site-footer{padding:44px 22px 100px}.mobile-cta{background:#fff}.mobile-cta a:last-child{background:var(--navy)}}
 
 /* 2026-07 typography and layout refinement */
 :root{--pale:#fff;--ivory:#fff;--paper:#fff;--line:#d9dfdc;--layout-max:1440px;--layout-gutter:48px}
