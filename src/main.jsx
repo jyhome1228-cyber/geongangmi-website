@@ -2,6 +2,7 @@ import React,{useEffect,useState}from'react';
 import{createRoot}from'react-dom/client';
 import{ArrowRight,ChevronDown,Minus,Plus,Menu,ShoppingBag,X}from'lucide-react';
 import'./style.css';
+import'./home.css';
 
 const nav=[['/about','건강미'],['/program','프로그램'],['/results','변화 사례'],['/journal','건강미 저널'],['/shop','SHOP'],['/reservation','예약·상담']];
 const labels={about:['ABOUT','건강미는 몸의 균형을\n다시 발견하는 곳입니다.'],program:['PROGRAM','나에게 맞는\n건강미 프로그램'],results:['RESULTS','숫자 너머의\n변화를 기록합니다.'],journal:['JOURNAL','건강한 변화를 위한\n작은 읽을거리'],reservation:['RESERVATION','나를 돌보는 변화,\n오늘부터 시작하세요.']};
@@ -12,14 +13,17 @@ function Header(){const[open,setOpen]=useState(false);return <header><Logo/><nav
 function Footer(){return <footer><Logo/><div><p>몸의 흐름과 일상의 균형을 회복하는 프리미엄 웰니스 케어</p><p>주소 · 연락처 · 운영시간 · 사업자 정보</p></div><div><Link to="/reservation">상담 예약</Link><Link to="/shop">SHOP</Link></div><small>© 2026 GEONGANGMI. ALL RIGHTS RESERVED.</small></footer>}
 const CTA=({to='/reservation',children='자세히 보기'})=><Link to={to} className="arrow-link">{children}<ArrowRight/></Link>;
 function Home(){return <>
- <section className="home-hero"><div><p className="eyebrow">PREMIUM WELLNESS CARE</p><h1>몸이 편안해질 때,<br/>아름다움은 시작됩니다.</h1><p>단순한 감량이 아닌 몸의 흐름과 일상의 균형을 회복하는 과정.</p><CTA to="/program">프로그램 살펴보기</CTA></div><Placeholder label="KEY VISUAL / 16:10" ratio="hero-image"/></section>
- <section className="statement"><p className="eyebrow">ABOUT GEONGANGMI</p><h2>덜어내고, 채우고,<br/>본래의 나로.</h2><p>건강미는 획일적인 기준 대신 한 사람의 몸과 생활을 세심하게 읽고 오래 지속되는 변화를 설계합니다.</p><CTA to="/about">건강미 이야기</CTA></section>
- <section className="split"><Placeholder label="BRAND IMAGE / 4:5" ratio="portrait"/><div><p className="eyebrow">OUR APPROACH</p><h2>진단에서 습관까지<br/>하나의 흐름으로</h2><p>현재 상태를 이해하는 상담, 맞춤 관리, 일상에서 이어지는 습관을 유기적으로 연결합니다.</p><CTA to="/program"/></div></section>
- <ProgramPreview/><ResultsPreview/><JournalPreview/><ShopPreview/>
+ <section className="home-hero"><div className="hero-copy"><p className="eyebrow">GEONGANGMI · SPA &amp; AESTHETIC</p><h1>몸의 흐름을 읽고,<br/>당신의 건강미를<br/>되찾는 시간.</h1><p>단순한 감량을 넘어 몸의 순환과 일상의 균형을 함께 돌봅니다.</p><div className="hero-actions"><CTA to="/program">프로그램 보기</CTA><CTA to="/reservation">첫 상담 예약</CTA></div></div><Placeholder label="HOME KEY VISUAL · 16:10" ratio="hero-image"/><span className="hero-index">01 / 10</span></section>
+ <section className="statement home-about"><div className="section-number">02</div><p className="eyebrow">ABOUT GEONGANGMI</p><h2>덜어내기보다<br/>바르게 흐르도록.</h2><div className="statement-copy"><p>건강미는 획일적인 체중과 사이즈 대신 한 사람의 몸과 생활을 세심하게 읽습니다. 지금의 상태를 이해하고, 몸이 스스로 균형을 회복할 수 있는 방향을 함께 설계합니다.</p><CTA to="/about">건강미 이야기</CTA></div></section>
+ <CarePreview/><ProgramPreview/>
+ <section className="space-preview"><div className="space-copy"><p className="eyebrow">A QUIET PLACE</p><h2>몸과 마음이<br/>잠시 고요해지는 곳</h2><p>한옥의 차분한 여백과 프라이빗한 동선 안에서 오롯이 나에게 집중하는 시간을 경험합니다.</p><CTA to="/about">공간 살펴보기</CTA></div><div className="space-gallery"><Placeholder label="SPACE · WIDE" ratio="banner"/><Placeholder label="SPACE DETAIL · 4:5" ratio="portrait"/></div></section>
+ <ResultsPreview/><ProcessPreview/><JournalPreview/><ShopPreview/>
  <section className="final-cta"><p className="eyebrow">BEGIN YOUR JOURNEY</p><h2>나에게 맞는 변화가<br/>궁금하다면</h2><CTA>첫 상담 예약하기</CTA></section>
  </>}
+function CarePreview(){const care=[['01','순환','정체된 몸의 흐름을 부드럽게 깨웁니다.'],['02','균형','현재의 몸과 생활 리듬을 함께 살핍니다.'],['03','회복','과도한 자극 없이 본래의 컨디션을 되찾습니다.'],['04','지속','관리 이후의 일상까지 이어질 습관을 만듭니다.']];return <section className="care-preview"><div className="care-intro"><p className="eyebrow">OUR POINT OF VIEW</p><h2>몸을 바라보는<br/>네 가지 관점</h2><p>한 부분만 떼어 관리하지 않고 몸 전체의 연결을 살펴봅니다.</p></div><div className="care-list">{care.map(([n,t,d])=><article key={n}><small>{n}</small><h3>{t}</h3><p>{d}</p><ArrowRight/></article>)}</div></section>}
 function ProgramPreview(){return <section className="section"><SectionHead eyebrow="PROGRAM" title={'현재의 나에게 맞는\n건강미 프로그램'} to="/program"/><div className="cards three">{['스타터 프로그램','10회 밸런스 케어','25회 딥 케어'].map((x,i)=><article key={x}><Placeholder label={'PROGRAM 0'+(i+1)} ratio="portrait"/><small>0{i+1}</small><h3>{x}</h3><p>프로그램 설명과 핵심 관리 구성이 들어갑니다.</p></article>)}</div></section>}
 function ResultsPreview(){return <section className="dark section"><SectionHead eyebrow="REAL RESULTS" title={'각자의 속도로 만들어진\n변화의 기록'} to="/results"/><div className="cards two"><Placeholder label="RESULT CASE 01"/><Placeholder label="RESULT CASE 02"/></div></section>}
+function ProcessPreview(){const steps=[['01','상담','몸의 상태와 생활 습관을 충분히 듣습니다.'],['02','진단','현재의 균형과 필요한 관리 방향을 찾습니다.'],['03','맞춤 관리','그날의 컨디션에 맞춰 섬세하게 관리합니다.'],['04','일상 연결','변화가 이어지도록 생활 가이드를 제안합니다.']];return <section className="process-preview"><SectionHead eyebrow="HOW IT WORKS" title={'처음부터 일상까지\n건강미를 경험하는 과정'} to="/reservation"/><div className="process-line">{steps.map(([n,t,d])=><article key={n}><small>{n}</small><h3>{t}</h3><p>{d}</p></article>)}</div></section>}
 function JournalPreview(){return <section className="section"><SectionHead eyebrow="JOURNAL" title={'건강미가 전하는\n몸과 생활의 이야기'} to="/journal"/><div className="cards three">{[1,2,3].map(n=><article key={n}><Placeholder label={'EDITORIAL 0'+n}/><small>순환과 회복 · 2026.00.00</small><h3>저널 콘텐츠 제목이 들어갑니다</h3></article>)}</div></section>}
 function ShopPreview(){return <section className="shop-preview"><div><p className="eyebrow">GEONGANGMI SELECT</p><h2>건강한 일상을 위한<br/>건강미의 선택</h2><p>현재 진행 중인 공동구매와 건강미가 선별한 제품을 소개합니다.</p><CTA to="/shop">SHOP 바로가기</CTA></div><Placeholder label="FEATURED PRODUCT" ratio="portrait"/></section>}
 function SectionHead({eyebrow,title,to}){return <div className="section-head"><div><p className="eyebrow">{eyebrow}</p><h2>{title.split('\n').map((x,i)=><React.Fragment key={x}>{x}{i===0&&<br/>}</React.Fragment>)}</h2></div>{to&&<CTA to={to}>전체 보기</CTA>}</div>}
