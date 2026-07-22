@@ -1,0 +1,1 @@
+.sub-hero{border-bottom:1px solid var(--line)}.sub-hero h1{margin:0;font:300 clamp(48px,6vw,86px)/1.25 var(--serif);letter-spacing:-.055em}.blank-section{min-height:650px}.blank-section p{margin:30px 0 0;font-size:13px;color:#647174}@media(max-width:800px){.sub-hero h1{font-size:43px}.blank-section{min-height:450px}}
