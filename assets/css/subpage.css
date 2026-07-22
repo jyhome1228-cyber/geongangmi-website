@@ -116,6 +116,47 @@ body[data-page="shop"] .shop-list-section:before{content:'';position:absolute;to
 .product-item p{max-width:330px;margin:0;color:#58676a;font-size:14px;line-height:1.75}
 .product-item strong{display:block;margin-top:28px;font-size:15px}
 
+/* Clear program chapters and product catalogue layout */
+body[data-page="program"] main>section{padding-top:88px;padding-bottom:88px}
+body[data-page="program"] .program-hero{padding-top:96px;padding-bottom:80px}
+body[data-page="program"] .program-hero .intro-copy{max-width:660px}
+body[data-page="program"] .program-principle:before,
+body[data-page="program"] .prescription-section:before,
+body[data-page="program"] .combination-section:before,
+body[data-page="program"] .journey-section:before,
+body[data-page="program"] .long-term-section:before,
+body[data-page="program"] .skin-booster-section:before,
+body[data-page="program"] .care-process-section:before{display:none}
+body[data-page="program"] .program-principle,
+body[data-page="program"] .prescription-section,
+body[data-page="program"] .journey-section,
+body[data-page="program"] .skin-booster-section{border-top:1px solid var(--line)}
+body[data-page="program"] #care-time,
+body[data-page="program"] .combination-section,
+body[data-page="program"] .long-term-section,
+body[data-page="program"] .care-process-section{border-top:8px solid #f4f6f5}
+body[data-page="program"] .section-head{display:grid;grid-template-columns:minmax(0,.85fr) minmax(360px,1.15fr);align-items:start;gap:80px;margin-bottom:46px}
+body[data-page="program"] .section-head .body-copy{max-width:560px;padding-top:34px}
+body[data-page="program"] .time-programs{gap:32px}
+body[data-page="program"] .time-card{padding:34px 0 0;border:0;border-top:2px solid var(--navy)}
+body[data-page="program"] .time-card.total-card{border-color:var(--blue)}
+body[data-page="program"] .comparison-wrap{margin-top:64px}
+body[data-page="program"] .selection-guide{margin-top:40px;border-bottom:0}
+body[data-page="program"] .journey-section blockquote{padding-top:46px;border-top:1px solid var(--line)}
+
+body[data-page="shop"] .sub-hero{min-height:360px;padding-bottom:72px}
+body[data-page="shop"] .shop-list-section:before{display:none}
+body[data-page="shop"] .shop-list-section{padding-top:72px;border-top:1px solid var(--line)}
+body[data-page="shop"] .tabs{margin-bottom:48px}
+.product-grid{gap:64px 28px}
+.product-item{min-height:0;padding:0;border:0}
+.product-media{display:grid;place-items:center;aspect-ratio:1/1;margin-bottom:22px;background:#f4f6f5;border:1px solid #e3e8e6;color:#9aa7a4}
+.product-media span{font-size:10px!important;font-weight:600!important;letter-spacing:.12em!important;color:#9aa7a4!important}
+.product-info{padding-top:18px;border-top:1px solid var(--blue)}
+.product-info h3{margin:20px 0 10px;font-size:19px}
+.product-info p{min-height:50px}
+.product-info strong{margin-top:20px}
+
 @media(max-width:800px){
   body[data-page="program"] .program-principle:before,body[data-page="program"] .prescription-section:before,body[data-page="program"] .combination-section:before,body[data-page="program"] .journey-section:before,body[data-page="program"] .long-term-section:before,body[data-page="program"] .skin-booster-section:before,body[data-page="program"] .care-process-section:before{left:22px;right:22px}
   body[data-page="program"] .area-grid.program-areas{grid-template-columns:1fr;gap:34px}
@@ -123,4 +164,9 @@ body[data-page="shop"] .shop-list-section:before{content:'';position:absolute;to
   body[data-page="shop"] .shop-list-section:before{left:22px;right:22px}
   .product-grid{grid-template-columns:1fr;gap:36px}
   .product-item{min-height:0;padding-bottom:10px}
+  body[data-page="program"] main>section{padding-top:66px;padding-bottom:66px}
+  body[data-page="program"] .section-head{grid-template-columns:1fr;gap:20px}
+  body[data-page="program"] .section-head .body-copy{padding-top:0}
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 16px}
 }
+@media(max-width:520px){.product-grid{grid-template-columns:1fr}}
