@@ -1,0 +1,4 @@
+const card=(label,index,title,desc)=>`<article><div class="placeholder portrait"><span>${label} 0${index}</span></div><small>0${index}</small><h3>${title}</h3><p>${desc}</p></article>`;
+document.querySelector('[data-cards="program"]').innerHTML=[card('PROGRAM',1,'스타터 프로그램','처음 건강미를 경험하는 분을 위한 기본 과정입니다.'),card('PROGRAM',2,'10회 밸런스 케어','몸의 흐름과 생활 리듬을 함께 돌보는 프로그램입니다.'),card('PROGRAM',3,'25회 딥 케어','충분한 시간을 두고 변화를 쌓아가는 집중 프로그램입니다.')].join('');
+document.querySelector('[data-cards="journal"]').innerHTML=[1,2,3].map(i=>card('EDITORIAL',i,'저널 콘텐츠 제목이 들어갑니다','순환과 회복 · 건강미 저널')).join('');
+document.querySelector('[data-process]').innerHTML=[['01','상담','몸의 상태와 생활 습관을 충분히 듣습니다.'],['02','진단','현재의 균형과 필요한 방향을 찾습니다.'],['03','맞춤 관리','그날의 컨디션에 맞춰 관리합니다.'],['04','일상 연결','변화가 이어지도록 생활 가이드를 제안합니다.']].map(([n,t,d])=>`<article><small>${n}</small><h3>${t}</h3><p>${d}</p></article>`).join('');
