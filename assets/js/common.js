@@ -1,8 +1,6 @@
-const compactStyle=document.createElement('link');
-compactStyle.rel='stylesheet';
-compactStyle.href='assets/css/site-v5.css';
-compactStyle.dataset.siteStyle='compact-v5';
-if(!document.querySelector('link[data-site-style="compact-v5"]')) document.head.appendChild(compactStyle);
+const appendStyle=(href,key)=>{if(document.querySelector(`link[data-site-style="${key}"]`))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.dataset.siteStyle=key;document.head.appendChild(link);};
+appendStyle('assets/css/site-v5.css','compact-v5');
+appendStyle('assets/css/site-v6.css','quiet-v6');
 
 const nav=[['about.html','건강미','about'],['program.html','프로그램 안내','program'],['results.html','변화 기록','results'],['journal.html','저널','journal'],['shop.html','건강미 셀렉트','shop'],['reservation.html','지점 안내','reservation']];
 const page=document.body.dataset.page;
