@@ -156,6 +156,24 @@ summary {
   font-weight: 600 !important;
 }
 
+/* Journal: align title, category bar and grid with header inner edges */
+body[data-page='journal'] .page-hero,
+body[data-page='journal'] .wrap {
+  width: min(calc(100% - 80px), 1200px) !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body[data-page='journal'] .journal-categories,
+body[data-page='journal'] .journal-card-grid {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 /* Footer and mobile controls */
 .site-footer p,
 .site-footer a,
@@ -208,5 +226,11 @@ summary {
 
   .home-spa-row p {
     grid-column: 2 / -1;
+  }
+
+  body[data-page='journal'] .page-hero,
+  body[data-page='journal'] .wrap {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
   }
 }
