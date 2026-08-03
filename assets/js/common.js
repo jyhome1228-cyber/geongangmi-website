@@ -4,6 +4,7 @@ appendStyle('assets/css/site-v6.css','quiet-v6');
 appendStyle('assets/css/site-v7.css','simple-grid-v7');
 appendStyle('assets/css/site-v8.css','typography-v8');
 appendStyle('assets/css/site-v9.css','spa-refinement-v9');
+appendStyle('assets/css/site-v10.css','listing-v10');
 
 const nav=[['about.html','건강미','about'],['program.html','프로그램 안내','program'],['results.html','변화 기록','results'],['journal.html','저널','journal'],['shop.html','SHOP','shop'],['reservation.html','지점 안내','reservation']];
 const page=document.body.dataset.page;
