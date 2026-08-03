@@ -1,1 +1,157 @@
-/* placeholder */
+/* Journal and shop: simple listing layouts */
+.journal-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ggm-line);
+}
+
+.journal-categories a {
+  color: var(--ggm-muted) !important;
+  font-size: 12px !important;
+}
+
+.journal-categories a.active {
+  color: var(--ggm-brand) !important;
+  font-weight: 600;
+}
+
+.journal-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 34px 20px;
+}
+
+.journal-card {
+  min-width: 0;
+}
+
+.journal-thumb,
+.product-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #eef1f1;
+  border: 1px solid var(--ggm-line);
+}
+
+.journal-thumb::after,
+.product-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(111,135,145,.08), rgba(255,255,255,.15));
+}
+
+.journal-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  color: var(--ggm-muted);
+}
+
+.journal-card-meta span,
+.journal-card-meta time {
+  font-size: 10px !important;
+  letter-spacing: .06em;
+}
+
+.journal-card h2 {
+  margin: 10px 0 7px;
+  font-size: 18px !important;
+  line-height: 1.45 !important;
+  font-weight: 500 !important;
+}
+
+.journal-card p {
+  margin: 0;
+  color: var(--ggm-muted);
+  font-size: 13px !important;
+  line-height: 1.7 !important;
+}
+
+.shop-list-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ggm-line);
+}
+
+.shop-list-head h2 {
+  margin: 0;
+  font-size: 22px !important;
+}
+
+.shop-list-head p {
+  margin: 0;
+  color: var(--ggm-muted);
+  font-size: 12px !important;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px 20px;
+}
+
+.product-card {
+  min-width: 0;
+}
+
+.product-card .product-label {
+  display: block;
+  margin-top: 13px;
+  color: var(--ggm-brand);
+  font-size: 10px !important;
+  letter-spacing: .1em;
+}
+
+.product-card h2 {
+  margin: 8px 0 6px;
+  font-size: 18px !important;
+  line-height: 1.4 !important;
+}
+
+.product-card p {
+  margin: 0 0 13px;
+  color: var(--ggm-muted);
+  font-size: 13px !important;
+  line-height: 1.7 !important;
+}
+
+.product-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--ggm-brand-dark) !important;
+  font-size: 12px !important;
+  border-bottom: 1px solid rgba(111,135,145,.42);
+}
+
+@media (max-width: 1024px) {
+  .journal-card-grid,
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .journal-card-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .shop-list-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
