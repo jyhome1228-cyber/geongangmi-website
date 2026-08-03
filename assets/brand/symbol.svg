@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 210" role="img" aria-labelledby="title">
+  <title id="title">건강미 심볼</title>
+  <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="60" cy="58" rx="43" ry="50"/>
+    <circle cx="60" cy="153" r="43"/>
+    <path d="M21 42h78M18 55h84M18 68h84M22 81h76M60 10v96"/>
+    <path d="M27 31c9-10 20-16 33-16s24 6 33 16M27 85c9 11 20 17 33 17s24-6 33-17"/>
+    <path d="M39 92c0 13-5 20-13 25M81 92c0 13 5 20 13 25"/>
+  </g>
+</svg>
