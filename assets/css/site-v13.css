@@ -1,0 +1,145 @@
+/* Final alignment pass: centered header, true 1440 content line, calm inner spacing */
+:root {
+  --site-content-width: 1440px;
+  --site-edge-gutter: 48px;
+}
+
+/* Header uses equal side columns so the navigation is optically centered. */
+.site-header {
+  display: grid !important;
+  grid-template-columns: 220px minmax(0, 1fr) 220px !important;
+  align-items: center !important;
+  gap: 24px !important;
+  padding-left: max(var(--site-edge-gutter), calc((100vw - var(--site-content-width)) / 2)) !important;
+  padding-right: max(var(--site-edge-gutter), calc((100vw - var(--site-content-width)) / 2)) !important;
+}
+
+.site-header > .brand {
+  justify-self: start !important;
+}
+
+.site-header > .main-nav {
+  width: auto !important;
+  min-width: 0 !important;
+  flex: none !important;
+  justify-self: center !important;
+  justify-content: center !important;
+}
+
+.site-header > .header-tools {
+  width: max-content !important;
+  justify-self: end !important;
+}
+
+/* Every main content area shares the same real 1440px start and end line. */
+.wrap,
+.section-pad,
+.home-hero-inner,
+.page-hero,
+.cta-white,
+.spa-statement-inner,
+.spa-care-message-inner {
+  width: min(var(--site-content-width), calc(100% - 96px)) !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+  padding-inline: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Journal had older 1200px rules. Force all journal elements onto the shared line. */
+body[data-page='journal'] .page-hero,
+body[data-page='journal'] .wrap,
+body[data-page='journal'] .journal-categories,
+body[data-page='journal'] .journal-card-grid {
+  width: min(var(--site-content-width), calc(100% - 96px)) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body[data-page='journal'] .wrap .journal-categories,
+body[data-page='journal'] .wrap .journal-card-grid {
+  width: 100% !important;
+}
+
+/* Colored manifesto blocks keep their 1440 frame but gain intentional inner breathing room. */
+.quote-band {
+  width: min(var(--site-content-width), calc(100% - 96px)) !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+  padding: 72px 56px !important;
+  box-sizing: border-box !important;
+}
+
+.quote-band > * {
+  max-width: 880px;
+}
+
+/* Keep section headings aligned without inherited offsets. */
+.page-hero-copy,
+.section-head,
+.journal-categories,
+.journal-card-grid {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 1320px) {
+  .site-header {
+    grid-template-columns: 180px minmax(0, 1fr) 180px !important;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  .site-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+
+  .wrap,
+  .section-pad,
+  .home-hero-inner,
+  .page-hero,
+  .cta-white,
+  .spa-statement-inner,
+  .spa-care-message-inner,
+  body[data-page='journal'] .page-hero,
+  body[data-page='journal'] .wrap {
+    width: calc(100% - 56px) !important;
+  }
+
+  .quote-band {
+    width: calc(100% - 56px) !important;
+    padding: 58px 38px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .wrap,
+  .section-pad,
+  .home-hero-inner,
+  .page-hero,
+  .cta-white,
+  .spa-statement-inner,
+  .spa-care-message-inner,
+  body[data-page='journal'] .page-hero,
+  body[data-page='journal'] .wrap {
+    width: calc(100% - 40px) !important;
+  }
+
+  .quote-band {
+    width: calc(100% - 40px) !important;
+    padding: 48px 24px !important;
+  }
+}
