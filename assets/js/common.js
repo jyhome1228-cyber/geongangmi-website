@@ -1,10 +1,14 @@
-const brandTheme = document.createElement('link');
-brandTheme.rel = 'stylesheet';
-brandTheme.href = 'assets/css/brand.css';
-brandTheme.dataset.brandTheme = 'healthmi';
-if (!document.querySelector('link[data-brand-theme="healthmi"]')) {
-  document.head.appendChild(brandTheme);
-}
+const appendStylesheet = (href, key) => {
+  if (document.querySelector(`link[data-theme-key="${key}"]`)) return;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = href;
+  link.dataset.themeKey = key;
+  document.head.appendChild(link);
+};
+
+appendStylesheet('assets/css/brand.css', 'healthmi-brand');
+appendStylesheet('assets/css/brand-polish.css', 'healthmi-polish');
 
 const nav = [
   ['about.html', '건강미', 'about'],
@@ -17,10 +21,7 @@ const nav = [
 
 const page = document.body.dataset.page;
 const desktopLinks = nav
-  .map(
-    ([href, label, key]) =>
-      `<a href="${href}" class="${page === key ? 'active' : ''}">${label}</a>`,
-  )
+  .map(([href, label, key]) => `<a href="${href}" class="${page === key ? 'active' : ''}">${label}</a>`)
   .join('');
 const mobileLinks = nav
   .map(
@@ -99,14 +100,10 @@ if (button && mobile) {
     document.body.classList.toggle('menu-open', !isOpen);
   });
 
-  mobile.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeMobileMenu);
-  });
-
+  mobile.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMobileMenu();
   });
-
   window.addEventListener('resize', () => {
     if (window.innerWidth > 1080) closeMobileMenu();
   });
