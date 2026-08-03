@@ -1,0 +1,111 @@
+/* Unified 1440px layout system */
+:root {
+  --ggm-max: 1440px;
+  --content: 1440px;
+  --layout-max: 1440px;
+  --site-content-width: 1440px;
+  --site-desktop-gutter: 48px;
+}
+
+/* Header: 1440px actual inner width */
+.site-header {
+  padding-left: max(var(--site-desktop-gutter), calc((100vw - var(--site-content-width)) / 2)) !important;
+  padding-right: max(var(--site-desktop-gutter), calc((100vw - var(--site-content-width)) / 2)) !important;
+}
+
+/* Shared content line: hero, sections, page content and CTA */
+.wrap,
+.section-pad,
+.home-hero-inner,
+.page-hero,
+.quote-band,
+.cta-white,
+.spa-statement-inner,
+.spa-care-message-inner {
+  width: min(var(--site-content-width), calc(100% - 96px)) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Keep text measures readable inside the wider frame */
+.home-hero h1 {
+  max-width: 720px !important;
+}
+
+.home-hero .lead {
+  max-width: 720px !important;
+}
+
+.page-hero-copy {
+  max-width: 700px !important;
+}
+
+.section-head {
+  width: 100% !important;
+}
+
+/* Listings and grids fill the same 1440px line */
+.journal-categories,
+.journal-card-grid,
+.shop-list-head,
+.product-grid,
+.home-spa-programs,
+.program-browser,
+.program-browser-spa,
+.principle-grid,
+.card-grid,
+.location-grid,
+.process-grid,
+.record-grid,
+.journey-grid,
+.home-links-grid {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Footer: full background with a 1440px aligned inner grid */
+.site-footer {
+  padding-left: max(var(--site-desktop-gutter), calc((100vw - var(--site-content-width)) / 2)) !important;
+  padding-right: max(var(--site-desktop-gutter), calc((100vw - var(--site-content-width)) / 2)) !important;
+}
+
+@media (max-width: 1024px) {
+  .site-header,
+  .site-footer {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+
+  .wrap,
+  .section-pad,
+  .home-hero-inner,
+  .page-hero,
+  .quote-band,
+  .cta-white,
+  .spa-statement-inner,
+  .spa-care-message-inner {
+    width: calc(100% - 56px) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header,
+  .site-footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .wrap,
+  .section-pad,
+  .home-hero-inner,
+  .page-hero,
+  .quote-band,
+  .cta-white,
+  .spa-statement-inner,
+  .spa-care-message-inner {
+    width: calc(100% - 40px) !important;
+  }
+}
