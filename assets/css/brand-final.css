@@ -1,0 +1,68 @@
+:root {
+  --brand-ivory: #ffffff !important;
+  --brand-ivory-light: #f4f6f6 !important;
+  --ivory: #ffffff !important;
+  --paper: #ffffff !important;
+  --pale: #f4f6f6 !important;
+}
+
+body,
+main,
+.section-pad,
+.panel,
+.archive-card,
+.product-item,
+.branch-card,
+.recovery-card {
+  background-color: #ffffff;
+}
+
+.soft-bg,
+.selection-guide,
+.signature-combo,
+.journey-grid .journey-featured {
+  background-color: #f4f6f6 !important;
+}
+
+.manifesto {
+  background: #6f8791 !important;
+  color: #ffffff !important;
+}
+
+.manifesto h2,
+.manifesto p {
+  color: #ffffff !important;
+}
+
+.space,
+.shop-preview,
+.about-closing {
+  background: #ffffff !important;
+  color: #262828 !important;
+  border-top: 1px solid rgba(63, 75, 94, 0.14) !important;
+}
+
+.final-cta,
+.cta-band {
+  background: #3f4b5e !important;
+  color: #ffffff !important;
+}
+
+.final-cta h2,
+.final-cta p,
+.final-cta .eyebrow,
+.final-cta .text-link,
+.cta-band h2,
+.cta-band p,
+.cta-band .eyebrow {
+  color: #ffffff !important;
+}
+
+.final-cta .text-link,
+.cta-band .text-link {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.site-footer {
+  background: #3f4b5e !important;
+}
