@@ -1,0 +1,294 @@
+/* Healthmi spa refinement — quiet editorial layout */
+
+.home-philosophy,
+.program-philosophy,
+.first-care-strip {
+  display: grid;
+  grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr);
+  gap: 86px;
+  align-items: start;
+}
+
+.home-philosophy-title h2,
+.program-philosophy h2,
+.first-care-strip h2 {
+  margin: 0;
+  font-size: clamp(24px, 2vw, 30px) !important;
+  line-height: 1.38 !important;
+}
+
+.home-philosophy-copy,
+.program-philosophy > div:last-child,
+.first-care-strip > div:last-child {
+  max-width: 650px;
+}
+
+.home-philosophy-copy > p,
+.program-philosophy > div:last-child > p,
+.first-care-strip > div:last-child > p {
+  margin-top: 0;
+  color: var(--ggm-muted);
+}
+
+.home-philosophy-lead,
+.program-philosophy-lead {
+  margin-bottom: 18px !important;
+  color: var(--ggm-ink) !important;
+  font-size: 17px !important;
+  font-weight: 500;
+  line-height: 1.7 !important;
+}
+
+.home-spa-programs {
+  border-top: 1px solid var(--ggm-line);
+}
+
+.home-spa-row {
+  display: grid;
+  grid-template-columns: 48px minmax(170px, .75fr) minmax(260px, 1.25fr) 42px;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 4px;
+  border-bottom: 1px solid var(--ggm-line);
+  color: var(--ggm-ink);
+}
+
+.home-spa-row span,
+.home-spa-row em {
+  color: var(--ggm-brand);
+  font-size: 10px !important;
+  font-style: normal;
+  letter-spacing: .12em;
+}
+
+.home-spa-row strong {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.home-spa-row p {
+  margin: 0;
+  color: var(--ggm-muted);
+  font-size: 13px !important;
+}
+
+.home-spa-row:hover strong {
+  color: var(--ggm-brand);
+}
+
+.spa-statement,
+.spa-care-message {
+  background: var(--ggm-brand);
+  color: var(--ggm-white);
+}
+
+.spa-statement-inner,
+.spa-care-message-inner {
+  width: min(100%, var(--ggm-max));
+  margin-inline: auto;
+  padding: 82px var(--ggm-gutter);
+}
+
+.spa-statement .eyebrow,
+.spa-care-message .eyebrow {
+  color: rgba(255,255,255,.74) !important;
+}
+
+.spa-statement h2,
+.spa-care-message h2 {
+  max-width: 650px;
+  margin: 0 0 22px;
+  color: var(--ggm-white) !important;
+  font-size: clamp(25px, 2.15vw, 32px) !important;
+  font-weight: 500 !important;
+  line-height: 1.38 !important;
+}
+
+.spa-statement p:last-child,
+.spa-care-message p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(255,255,255,.76);
+  font-size: 14px !important;
+  line-height: 1.9 !important;
+}
+
+.program-philosophy {
+  padding-top: 74px !important;
+  padding-bottom: 74px !important;
+}
+
+.first-care-strip {
+  padding-top: 62px;
+  padding-bottom: 62px;
+}
+
+.first-care-strip .text-link {
+  margin-top: 8px;
+}
+
+.program-section {
+  padding-top: 78px !important;
+}
+
+.program-index-intro {
+  margin-bottom: 38px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--ggm-line);
+}
+
+.program-browser-spa {
+  grid-template-columns: 260px minmax(0, 1fr) !important;
+  min-height: 470px !important;
+  border: 1px solid var(--ggm-line) !important;
+  background: var(--ggm-white) !important;
+}
+
+.program-browser-spa .program-menu {
+  background: #f7f8f8 !important;
+}
+
+.program-browser-spa .program-menu button {
+  min-height: 61px;
+  padding: 17px 18px !important;
+}
+
+.program-browser-spa .program-menu button strong {
+  font-size: 13px !important;
+}
+
+.program-browser-spa .program-detail {
+  padding: 42px 46px !important;
+}
+
+.program-browser-spa .program-detail-panel {
+  max-width: 800px;
+}
+
+.program-browser-spa .program-detail-panel h2 {
+  max-width: 680px;
+  font-size: clamp(21px, 1.65vw, 25px) !important;
+}
+
+.program-browser-spa .program-detail-panel > p:not(.program-kicker):not(.program-note-line) {
+  max-width: 660px;
+  margin-bottom: 30px;
+  color: var(--ggm-muted);
+}
+
+.program-service-list {
+  border-top: 1px solid var(--ggm-line);
+}
+
+.program-service-list section {
+  display: grid;
+  grid-template-columns: minmax(210px, .75fr) minmax(0, 1.25fr);
+  gap: 34px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--ggm-line);
+}
+
+.program-service-list section > div small {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ggm-brand);
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.program-service-list h3 {
+  margin: 0;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.program-service-list section > p {
+  margin: 0;
+  color: var(--ggm-muted);
+  font-size: 13px !important;
+}
+
+.program-browser-spa .program-specs {
+  margin-top: 28px;
+  border-color: var(--ggm-line);
+}
+
+.program-browser-spa .program-specs section {
+  padding: 24px;
+}
+
+.program-browser-spa .program-specs h3 {
+  font-size: 15px !important;
+}
+
+.program-browser-spa .program-specs li {
+  font-size: 13px !important;
+  line-height: 1.75 !important;
+}
+
+.program-browser-spa .program-note-line {
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .home-philosophy,
+  .program-philosophy,
+  .first-care-strip {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .home-spa-row {
+    grid-template-columns: 38px 1fr 34px;
+    gap: 16px;
+  }
+
+  .home-spa-row p {
+    grid-column: 2 / -1;
+  }
+
+  .program-browser-spa {
+    grid-template-columns: 220px minmax(0, 1fr) !important;
+  }
+
+  .program-browser-spa .program-detail {
+    padding: 34px 30px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .spa-statement-inner,
+  .spa-care-message-inner {
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+
+  .program-browser-spa {
+    display: block !important;
+  }
+
+  .program-browser-spa .program-menu {
+    display: flex;
+    overflow-x: auto;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--ggm-line);
+  }
+
+  .program-browser-spa .program-menu button {
+    flex: 0 0 170px;
+    grid-template-columns: 28px 1fr;
+    min-height: 58px;
+    border-right: 1px solid var(--ggm-line);
+    border-bottom: 0 !important;
+  }
+
+  .program-browser-spa .program-menu button::after {
+    display: none;
+  }
+
+  .program-service-list section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
