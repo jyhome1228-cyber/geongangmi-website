@@ -9,6 +9,7 @@ const appendStylesheet = (href, key) => {
 
 appendStylesheet('assets/css/brand.css', 'healthmi-brand');
 appendStylesheet('assets/css/brand-polish.css', 'healthmi-polish');
+appendStylesheet('assets/css/brand-final.css', 'healthmi-final');
 
 const nav = [
   ['about.html', '건강미', 'about'],
