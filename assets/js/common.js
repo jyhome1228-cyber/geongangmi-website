@@ -1,3 +1,11 @@
+const brandTheme = document.createElement('link');
+brandTheme.rel = 'stylesheet';
+brandTheme.href = 'assets/css/brand.css';
+brandTheme.dataset.brandTheme = 'healthmi';
+if (!document.querySelector('link[data-brand-theme="healthmi"]')) {
+  document.head.appendChild(brandTheme);
+}
+
 const nav = [
   ['about.html', '건강미', 'about'],
   ['program.html', '프로그램 안내', 'program'],
