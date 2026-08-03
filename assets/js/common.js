@@ -2,6 +2,7 @@ const appendStyle=(href,key)=>{if(document.querySelector(`link[data-site-style="
 appendStyle('assets/css/site-v5.css','compact-v5');
 appendStyle('assets/css/site-v6.css','quiet-v6');
 appendStyle('assets/css/site-v7.css','simple-grid-v7');
+appendStyle('assets/css/site-v8.css','typography-v8');
 
 const nav=[['about.html','건강미','about'],['program.html','프로그램 안내','program'],['results.html','변화 기록','results'],['journal.html','저널','journal'],['shop.html','SHOP','shop'],['reservation.html','지점 안내','reservation']];
 const page=document.body.dataset.page;
