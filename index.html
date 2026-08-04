@@ -13,12 +13,38 @@
 <header class="site-header" data-header></header>
 <main>
 
-<section class="home-hero">
-  <div class="home-hero-inner">
-    <p class="eyebrow">GEONGANGMI · SPA & AESTHETIC</p>
-    <h1>몸의 흐름을 읽고,<br>한 사람에게 필요한 관리를<br>제안합니다.</h1>
-    <p class="lead">건강미는 정해진 기준보다 현재의 몸을 먼저 살핍니다. 구조와 순환, 피부와 회복의 흐름을 읽고 한 사람에게 필요한 관리 순서를 설계합니다.</p>
-    <div class="hero-actions"><a class="button primary" href="program.html">프로그램 안내</a><a class="button ghost" href="reservation.html#consultation">첫 상담 예약</a></div>
+<section class="hero-slider" data-hero-slider aria-label="건강미 주요 안내">
+  <article class="hero-slide is-active" data-hero-slide aria-hidden="false">
+    <img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/5b596a96d8afa.jpg" alt="건강미 메인 브랜드 비주얼" fetchpriority="high">
+    <div class="hero-slide-copy">
+      <p class="eyebrow">GEONGANGMI · SPA & AESTHETIC</p>
+      <h1>몸의 흐름을 읽고,<br>한 사람에게 필요한 관리를 제안합니다.</h1>
+      <p>구조와 순환, 피부와 회복의 흐름을 살피고 현재의 몸에 필요한 관리 순서를 설계합니다.</p>
+      <div class="hero-actions"><a class="button primary" href="program.html">프로그램 안내</a><a class="button ghost" href="reservation.html#consultation">첫 상담 예약</a></div>
+    </div>
+  </article>
+  <article class="hero-slide" data-hero-slide aria-hidden="true">
+    <img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/3aa2ab74bc35f.jpg" alt="건강미 프로그램 안내 비주얼" loading="lazy">
+    <div class="hero-slide-copy">
+      <p class="eyebrow">PERSONAL CARE PROGRAM</p>
+      <h1>같은 프로그램도<br>매번 같은 방식으로 진행하지 않습니다.</h1>
+      <p>관리 전 몸의 긴장과 순환, 피부와 조직의 상태를 확인하고 그날 필요한 범위와 순서를 조정합니다.</p>
+      <div class="hero-actions"><a class="button primary" href="program.html">프로그램 보기</a></div>
+    </div>
+  </article>
+  <article class="hero-slide" data-hero-slide aria-hidden="true">
+    <img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/e5f482971f420.jpg" alt="건강미 지점 방문 안내 비주얼" loading="lazy">
+    <div class="hero-slide-copy">
+      <p class="eyebrow">LOCATIONS & RESERVATION</p>
+      <h1>가까운 건강미에서<br>상담부터 시작하세요.</h1>
+      <p>청담·잠실·여수 세 지점에서 현재의 고민과 희망 방문 일정에 맞춰 안내합니다.</p>
+      <div class="hero-actions"><a class="button primary" href="reservation.html">지점 안내</a></div>
+    </div>
+  </article>
+  <div class="hero-slider-nav" aria-label="배너 선택">
+    <button type="button" class="is-active" data-slide-to="0" aria-label="첫 번째 배너" aria-current="true"></button>
+    <button type="button" data-slide-to="1" aria-label="두 번째 배너" aria-current="false"></button>
+    <button type="button" data-slide-to="2" aria-label="세 번째 배너" aria-current="false"></button>
   </div>
 </section>
 
@@ -36,9 +62,17 @@
   </div>
 </section>
 
+<section class="wrap section" style="padding-top:0!important;">
+  <div class="home-visual-grid">
+    <figure><img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/0b1dcbe231659.png" alt="건강미 라운지 공간" loading="lazy"></figure>
+    <figure><img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/8c461cc3b2ea3.png" alt="건강미 오브제와 티 이미지" loading="lazy"></figure>
+    <figure><img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/61618e86a2f6d.png" alt="건강미 관리 장면" loading="lazy"></figure>
+  </div>
+</section>
+
 <section class="section soft">
   <div class="wrap">
-    <div class="section-head"><div><p class="eyebrow">PROGRAM GUIDE</p><h2>건강미가 구성하는 프로그램</h2></div><p class="body-copy">복잡한 메뉴판 대신 관리 목적에 따라 프로그램을 고르고, 상세 내용을 확인할 수 있습니다.</p></div>
+    <div class="section-head"><div><p class="eyebrow">PROGRAM GUIDE</p><h2>건강미가 구성하는 프로그램</h2></div><p class="body-copy">관리 목적에 따라 프로그램을 고르고, 상세 내용을 확인할 수 있습니다.</p></div>
     <div class="home-spa-programs">
       <a href="program.html" class="home-spa-row"><span>01</span><strong>시그니처 바디</strong><p>바디의 구조와 순환을 함께 살피는 기본·전신 림프 관리</p><em>VIEW</em></a>
       <a href="program.html" class="home-spa-row"><span>02</span><strong>윤곽·피부 재생</strong><p>페이스 윤곽과 피부 컨디션을 목·어깨·데콜테와 연결하는 관리</p><em>VIEW</em></a>
@@ -50,13 +84,13 @@
 <section class="spa-statement">
   <div class="spa-statement-inner">
     <p class="eyebrow">LONG-TERM CARE</p>
-    <h2>피부와 몸은<br>시간과 함께 변합니다.</h2>
-    <p>빠른 변화와 짧은 만족보다 중요한 것은 현재 상태에 맞는 관리가 꾸준히 이어지는 것입니다. 건강미는 방문 횟수를 일률적으로 정하지 않고, 변화의 속도와 생활 리듬을 기록하며 다음 관리를 제안합니다.</p>
+    <h2>피부와 몸은 시간과 함께 변합니다.</h2>
+    <p>빠른 변화보다 중요한 것은 현재 상태에 맞는 관리가 꾸준히 이어지는 것입니다. 건강미는 변화의 속도와 생활 리듬을 기록하며 다음 관리를 제안합니다.</p>
   </div>
 </section>
 
 <section class="wrap section">
-  <div class="section-head"><div><p class="eyebrow">OUR APPROACH</p><h2>짧은 만족보다<br>오래 유지되는 건강한 아름다움</h2></div><p class="body-copy">강한 자극보다 몸이 받아들일 수 있는 속도를 존중하고, 관리 이후의 일상까지 함께 생각합니다.</p></div>
+  <div class="section-head"><div><p class="eyebrow">OUR APPROACH</p><h2>짧은 만족보다 오래 유지되는 건강한 아름다움</h2></div><p class="body-copy">강한 자극보다 몸이 받아들일 수 있는 속도를 존중하고, 관리 이후의 일상까지 함께 생각합니다.</p></div>
   <div class="principle-grid">
     <article><small>01 · OBSERVE</small><h3>상태를 읽습니다</h3><p>부종, 긴장, 피부와 당일 컨디션을 먼저 확인합니다.</p></article>
     <article><small>02 · DESIGN</small><h3>순서를 설계합니다</h3><p>보이는 고민과 연결된 원인 영역을 함께 구성합니다.</p></article>
@@ -86,5 +120,6 @@
 <footer class="site-footer" data-footer></footer>
 <div class="mobile-cta"></div>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/hero-slider.js"></script>
 </body>
 </html>

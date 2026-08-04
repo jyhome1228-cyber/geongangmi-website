@@ -8,6 +8,7 @@ appendStyle('assets/css/site-v10.css','listing-v10');
 appendStyle('assets/css/site-v11.css','readability-v11');
 appendStyle('assets/css/site-v12.css','layout-1440-v12');
 appendStyle('assets/css/site-v13.css','alignment-v13');
+appendStyle('assets/css/site-v14.css','real-images-v14');
 
 const nav=[['about.html','건강미','about'],['program.html','프로그램 안내','program'],['results.html','변화 기록','results'],['journal.html','저널','journal'],['shop.html','SHOP','shop'],['reservation.html','지점 안내','reservation']];
 const page=document.body.dataset.page;
