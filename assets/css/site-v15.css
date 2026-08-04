@@ -1,0 +1,132 @@
+/* Full-bleed hero and aligned image grids */
+
+/* The rolling banner is intentionally detached from the 1440px content frame. */
+.hero-slider {
+  width: 100vw !important;
+  max-width: none !important;
+  height: clamp(560px, 42vw, 760px) !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Keep banner copy aligned with the shared 1440px content line. */
+.hero-slide-copy {
+  left: max(48px, calc((100vw - 1440px) / 2)) !important;
+  width: min(620px, calc(100vw - 96px)) !important;
+}
+
+.hero-slider-nav {
+  left: max(48px, calc((100vw - 1440px) / 2)) !important;
+}
+
+/* Remove visual steps caused by mixed aspect ratios. */
+.home-visual-grid {
+  align-items: stretch !important;
+  grid-template-rows: clamp(380px, 28vw, 460px) !important;
+}
+
+.home-visual-grid figure,
+.home-visual-grid figure:first-child,
+.home-visual-grid figure:not(:first-child) {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+}
+
+.home-visual-grid img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Apply the same baseline rule to other mixed image groups. */
+.program-visual-section,
+.about-space-gallery,
+.location-space-gallery {
+  align-items: stretch !important;
+}
+
+.program-visual-section {
+  grid-template-rows: clamp(360px, 28vw, 450px) !important;
+}
+
+.program-visual-section figure,
+.program-visual-section figure:first-child,
+.program-visual-section figure:last-child {
+  height: 100% !important;
+  aspect-ratio: auto !important;
+}
+
+.about-space-gallery,
+.location-space-gallery {
+  grid-template-rows: clamp(300px, 23vw, 380px) !important;
+}
+
+.about-space-gallery figure,
+.about-space-gallery figure:first-child,
+.location-space-gallery figure,
+.location-space-gallery figure:first-child {
+  height: 100% !important;
+  aspect-ratio: auto !important;
+}
+
+/* The first content block starts cleanly below the full-width hero. */
+.hero-slider + .section,
+.hero-slider + .wrap.section {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 1080px) {
+  .hero-slider {
+    width: 100vw !important;
+    height: clamp(520px, 68vw, 660px) !important;
+  }
+
+  .hero-slide-copy,
+  .hero-slider-nav {
+    left: 28px !important;
+  }
+
+  .home-visual-grid {
+    grid-template-rows: 400px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-slider {
+    width: 100vw !important;
+    height: 560px !important;
+  }
+
+  .hero-slide-copy {
+    left: 20px !important;
+    right: 20px !important;
+    width: auto !important;
+  }
+
+  .hero-slider-nav {
+    left: 20px !important;
+  }
+
+  .home-visual-grid,
+  .program-visual-section,
+  .about-space-gallery,
+  .location-space-gallery {
+    grid-template-rows: none !important;
+  }
+
+  .home-visual-grid figure,
+  .home-visual-grid figure:first-child,
+  .home-visual-grid figure:not(:first-child),
+  .program-visual-section figure,
+  .program-visual-section figure:first-child,
+  .program-visual-section figure:last-child,
+  .about-space-gallery figure,
+  .about-space-gallery figure:first-child,
+  .location-space-gallery figure,
+  .location-space-gallery figure:first-child {
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+}
