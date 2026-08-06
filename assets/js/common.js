@@ -16,6 +16,7 @@ appendStyle('assets/css/site-v18.css','about-cheongdam-shop-v18');
 appendStyle('assets/css/site-v19.css','shop-product-v19');
 appendStyle('assets/css/site-v20.css','shop-square-detail-v20');
 appendStyle('assets/css/site-v21.css','final-cta-v21');
+appendStyle('assets/css/site-v22.css','home-cta-right-v22');
 
 const nav=[['about.html','건강미','about'],['program.html','프로그램 안내','program'],['results.html','변화 기록','results'],['journal.html','저널','journal'],['shop.html','건강미 샵','shop'],['reservation.html','지점 안내','reservation']];
 const page=document.body.dataset.page;
