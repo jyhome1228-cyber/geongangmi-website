@@ -1,0 +1,88 @@
+/* Final CTA alignment and reservation closing button visibility */
+
+/* Program page CTA: copy left, action aligned to the 1440px right edge */
+body[data-page="program"] .cta-white {
+  width: min(1440px, calc(100% - 96px)) !important;
+  margin-inline: auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "eyebrow action"
+    "title action" !important;
+  align-items: end !important;
+  column-gap: 72px !important;
+  padding: 84px 0 88px !important;
+  text-align: left !important;
+}
+
+body[data-page="program"] .cta-white > .eyebrow {
+  grid-area: eyebrow;
+  margin: 0 0 14px !important;
+}
+
+body[data-page="program"] .cta-white > h2 {
+  grid-area: title;
+  max-width: 780px !important;
+  margin: 0 !important;
+}
+
+body[data-page="program"] .cta-white > .cta-actions {
+  grid-area: action;
+  justify-self: end !important;
+  align-self: end !important;
+  margin: 0 !important;
+}
+
+body[data-page="program"] .cta-white .button {
+  min-width: 164px;
+}
+
+/* Reservation closing button: keep label visible on the brand background */
+.reservation-closing .button.ghost,
+.reservation-closing a.button.ghost {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 168px !important;
+  min-height: 52px !important;
+  padding: 0 24px !important;
+  border: 1px solid #fff !important;
+  background: #fff !important;
+  color: var(--ggm-brand-dark) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+}
+
+.reservation-closing .button.ghost:hover,
+.reservation-closing a.button.ghost:hover,
+.reservation-closing .button.ghost:focus-visible,
+.reservation-closing a.button.ghost:focus-visible {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+@media (max-width: 720px) {
+  body[data-page="program"] .cta-white {
+    width: calc(100% - 40px) !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "action" !important;
+    row-gap: 0 !important;
+    padding: 62px 0 66px !important;
+  }
+
+  body[data-page="program"] .cta-white > .cta-actions {
+    justify-self: start !important;
+    margin-top: 28px !important;
+  }
+
+  .reservation-closing .button.ghost,
+  .reservation-closing a.button.ghost {
+    min-width: 150px !important;
+  }
+}
