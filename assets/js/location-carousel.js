@@ -1,86 +1,93 @@
 (() => {
-  const carousel = document.querySelector('[data-location-carousel]');
-  if (!carousel) return;
+  const blocks = Array.from(document.querySelectorAll('[data-location-carousel-block]'));
+  if (!blocks.length) return;
 
-  const track = carousel.querySelector('[data-location-track]');
-  const slides = Array.from(carousel.querySelectorAll('[data-location-slide]'));
-  const prev = document.querySelector('[data-location-prev]');
-  const next = document.querySelector('[data-location-next]');
-  const current = document.querySelector('[data-location-current]');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  let index = 0;
-  let timer = null;
+  blocks.forEach((block) => {
+    const carousel = block.querySelector('[data-location-carousel]');
+    const track = block.querySelector('[data-location-track]');
+    const slides = Array.from(block.querySelectorAll('[data-location-slide]'));
+    const prev = block.querySelector('[data-location-prev]');
+    const next = block.querySelector('[data-location-next]');
+    const current = block.querySelector('[data-location-current]');
 
-  const visibleCount = () => {
-    if (window.innerWidth <= 720) return 1;
-    if (window.innerWidth <= 980) return 2;
-    return 3;
-  };
+    if (!carousel || !track || !slides.length) return;
 
-  const maxIndex = () => Math.max(0, slides.length - visibleCount());
+    let index = 0;
+    let timer = null;
 
-  const updateCounter = () => {
-    if (current) current.textContent = String(index + 1).padStart(2, '0');
-  };
+    const visibleCount = () => {
+      if (window.innerWidth <= 720) return 1;
+      if (window.innerWidth <= 980) return 2;
+      return 3;
+    };
 
-  const goTo = (nextIndex, behavior = 'smooth') => {
-    index = Math.min(Math.max(nextIndex, 0), maxIndex());
-    const target = slides[index];
-    if (!target) return;
-    const left = target.offsetLeft - track.offsetLeft;
-    carousel.scrollTo({ left, behavior: prefersReducedMotion ? 'auto' : behavior });
-    updateCounter();
-  };
+    const maxIndex = () => Math.max(0, slides.length - visibleCount());
 
-  const goNext = () => goTo(index >= maxIndex() ? 0 : index + 1);
-  const goPrev = () => goTo(index <= 0 ? maxIndex() : index - 1);
+    const updateCounter = () => {
+      if (current) current.textContent = String(index + 1).padStart(2, '0');
+    };
 
-  const stopAuto = () => {
-    if (timer) window.clearInterval(timer);
-    timer = null;
-  };
+    const goTo = (nextIndex, behavior = 'smooth') => {
+      index = Math.min(Math.max(nextIndex, 0), maxIndex());
+      const target = slides[index];
+      if (!target) return;
+      const left = target.offsetLeft - track.offsetLeft;
+      carousel.scrollTo({ left, behavior: prefersReducedMotion ? 'auto' : behavior });
+      updateCounter();
+    };
 
-  const startAuto = () => {
-    stopAuto();
-    if (prefersReducedMotion) return;
-    timer = window.setInterval(goNext, 4600);
-  };
+    const goNext = () => goTo(index >= maxIndex() ? 0 : index + 1);
+    const goPrev = () => goTo(index <= 0 ? maxIndex() : index - 1);
 
-  prev?.addEventListener('click', () => {
-    goPrev();
-    startAuto();
-  });
+    const stopAuto = () => {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    };
 
-  next?.addEventListener('click', () => {
-    goNext();
-    startAuto();
-  });
+    const startAuto = () => {
+      stopAuto();
+      if (prefersReducedMotion) return;
+      timer = window.setInterval(goNext, 4600);
+    };
 
-  carousel.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowRight') {
-      event.preventDefault();
-      goNext();
-    }
-    if (event.key === 'ArrowLeft') {
-      event.preventDefault();
+    prev?.addEventListener('click', () => {
       goPrev();
-    }
-  });
+      startAuto();
+    });
 
-  ['mouseenter', 'focusin', 'touchstart'].forEach((eventName) => {
-    carousel.addEventListener(eventName, stopAuto, { passive: true });
-  });
-  ['mouseleave', 'focusout', 'touchend'].forEach((eventName) => {
-    carousel.addEventListener(eventName, startAuto, { passive: true });
-  });
+    next?.addEventListener('click', () => {
+      goNext();
+      startAuto();
+    });
 
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    window.clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(() => goTo(Math.min(index, maxIndex()), 'auto'), 120);
-  });
+    carousel.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goNext();
+      }
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goPrev();
+      }
+    });
 
-  updateCounter();
-  startAuto();
+    ['mouseenter', 'focusin', 'touchstart'].forEach((eventName) => {
+      carousel.addEventListener(eventName, stopAuto, { passive: true });
+    });
+
+    ['mouseleave', 'focusout', 'touchend'].forEach((eventName) => {
+      carousel.addEventListener(eventName, startAuto, { passive: true });
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => goTo(Math.min(index, maxIndex()), 'auto'), 120);
+    });
+
+    updateCounter();
+    startAuto();
+  });
 })();
