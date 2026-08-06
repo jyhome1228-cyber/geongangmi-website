@@ -1,0 +1,54 @@
+/* Home final CTA alignment */
+body[data-page="home"] .cta-white {
+  width: min(1440px, calc(100% - 96px)) !important;
+  margin-inline: auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas:
+    "eyebrow action"
+    "title action" !important;
+  align-items: end !important;
+  column-gap: 72px !important;
+  padding: 84px 0 88px !important;
+  text-align: left !important;
+}
+
+body[data-page="home"] .cta-white > .eyebrow {
+  grid-area: eyebrow;
+  margin: 0 0 14px !important;
+}
+
+body[data-page="home"] .cta-white > h2 {
+  grid-area: title;
+  max-width: 820px !important;
+  margin: 0 !important;
+}
+
+body[data-page="home"] .cta-white > .cta-actions {
+  grid-area: action;
+  justify-self: end !important;
+  align-self: end !important;
+  margin: 0 !important;
+}
+
+body[data-page="home"] .cta-white .button {
+  min-width: 168px;
+}
+
+@media (max-width: 720px) {
+  body[data-page="home"] .cta-white {
+    width: calc(100% - 40px) !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "action" !important;
+    row-gap: 0 !important;
+    padding: 62px 0 66px !important;
+  }
+
+  body[data-page="home"] .cta-white > .cta-actions {
+    justify-self: start !important;
+    margin-top: 28px !important;
+  }
+}
