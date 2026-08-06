@@ -1,0 +1,206 @@
+/* Shop square card correction and product long-detail page */
+
+/* Force every shop item into the same vertical card structure. */
+.shop-list-section .product-grid {
+  align-items: start !important;
+}
+
+.shop-list-section .product-card,
+.shop-list-section .product-card-link {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.shop-list-section .product-card a.product-card-link {
+  display: block !important;
+  border: 0 !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.shop-list-section .product-card .product-thumb {
+  position: relative !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid var(--ggm-line) !important;
+  background: #f3f5f5 !important;
+}
+
+.shop-list-section .product-card .product-thumb.product-thumb-contain {
+  padding: clamp(22px, 2.3vw, 40px) !important;
+  background: #fff !important;
+}
+
+.shop-list-section .product-card .product-thumb img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.shop-list-section .product-card.is-coming-soon .product-thumb::before {
+  display: none !important;
+}
+
+.shop-list-section .product-card.is-coming-soon .product-thumb > span {
+  color: #a4adaf;
+  font-size: 11px;
+  letter-spacing: .14em;
+}
+
+.shop-list-section .product-card-copy {
+  display: block !important;
+  width: 100% !important;
+  padding: 16px 0 0 !important;
+}
+
+.shop-list-section .product-card .product-label {
+  display: flex !important;
+  margin: 0 0 8px !important;
+}
+
+/* Product detail top */
+.product-detail-hero-clean {
+  align-items: center !important;
+}
+
+.product-detail-main-image {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid var(--ggm-line);
+  background: #fff;
+  padding: clamp(34px, 4vw, 72px);
+}
+
+.product-detail-main-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Long detail images supplied by the brand. */
+.product-detail-content {
+  padding: 92px 0 110px;
+  border-top: 1px solid var(--ggm-line);
+  background: #f7f8f8;
+}
+
+.product-detail-content-head {
+  width: min(1080px, calc(100% - 96px));
+  margin: 0 auto 42px;
+}
+
+.product-detail-content-head h2 {
+  margin: 0;
+  font-size: clamp(27px, 2.2vw, 35px) !important;
+  line-height: 1.42 !important;
+  font-weight: 600 !important;
+}
+
+.product-detail-image-stack {
+  width: min(1080px, calc(100% - 96px));
+  margin-inline: auto;
+  background: #fff;
+}
+
+.product-detail-image-stack img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.product-purchase-closing {
+  border-top: 1px solid var(--ggm-line);
+  background: #fff;
+}
+
+.product-purchase-closing-inner {
+  width: min(1440px, calc(100% - 96px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 72px;
+  padding: 82px 0 88px;
+}
+
+.product-purchase-closing h2 {
+  max-width: 650px;
+  margin: 0;
+  font-size: clamp(27px, 2.15vw, 35px) !important;
+  line-height: 1.45 !important;
+}
+
+.product-purchase-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.product-purchase-actions .button {
+  min-width: 144px;
+  justify-content: center;
+}
+
+@media (max-width: 1080px) {
+  .product-purchase-closing-inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 30px;
+  }
+
+  .product-purchase-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .shop-list-section .product-card .product-thumb.product-thumb-contain {
+    padding: 26px !important;
+  }
+
+  .product-detail-main-image {
+    padding: 30px;
+  }
+
+  .product-detail-content {
+    padding: 64px 0 72px;
+  }
+
+  .product-detail-content-head,
+  .product-detail-image-stack,
+  .product-purchase-closing-inner {
+    width: calc(100% - 40px);
+  }
+
+  .product-detail-content-head {
+    margin-bottom: 28px;
+  }
+
+  .product-purchase-closing-inner {
+    padding: 62px 0 68px;
+  }
+
+  .product-purchase-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .product-purchase-actions .button {
+    width: 100% !important;
+  }
+}
