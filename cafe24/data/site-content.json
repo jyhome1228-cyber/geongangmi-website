@@ -1,0 +1,37 @@
+{
+  "brand": {
+    "name": "건강미",
+    "englishName": "GEONGANGMI",
+    "descriptor": "SPA & AESTHETIC",
+    "heroTitle": "보이는 곳만 관리하지 않습니다.\n왜 달라졌는지부터 봅니다.",
+    "heroBody": "현재의 몸 상태와 생활 리듬을 확인하고, 필요한 관리의 범위와 순서를 개인별로 설계합니다.",
+    "philosophyTitle": "터치는 곧 생각입니다.",
+    "philosophyBody": "같은 고민이라도 몸의 긴장, 순환, 피부 상태와 생활 리듬은 서로 다릅니다. 건강미는 관리 전 상태를 읽고 손이 닿는 이유와 순서를 고민하며 방문마다 달라지는 반응에 맞춰 방향을 조정합니다."
+  },
+  "navigation": [
+    { "label": "건강미 소개", "key": "about", "href": "/about" },
+    { "label": "프로그램", "key": "program", "href": "/program" },
+    { "label": "변화 사례", "key": "results", "href": "/results" },
+    { "label": "지점 안내", "key": "locations", "href": "/locations" },
+    { "label": "건강미 저널", "key": "journal", "href": "/journal" },
+    { "label": "쇼핑몰", "key": "shop", "href": "/product/list.html?cate_no=1" }
+  ],
+  "process": [
+    { "step": "01", "en": "CHECK", "title": "상태 확인", "body": "현재 불편한 부분과 몸의 상태를 먼저 확인합니다." },
+    { "step": "02", "en": "ANALYZE", "title": "연결 분석", "body": "보이는 고민과 연결된 긴장과 생활 습관을 함께 살펴봅니다." },
+    { "step": "03", "en": "DESIGN", "title": "관리 설계", "body": "당일 컨디션에 맞춰 관리 범위와 순서를 조정합니다." },
+    { "step": "04", "en": "CARE", "title": "맞춤 관리", "body": "몸이 받아들일 수 있는 속도를 고려해 관리를 진행합니다." },
+    { "step": "05", "en": "RECORD", "title": "변화 기록", "body": "방문별 반응을 기록하고 다음 관리의 기준으로 삼습니다." }
+  ],
+  "programs": [
+    { "id": "signature-body", "name": "시그니처 바디", "summary": "몸의 구조와 순환을 함께 살피는 바디 프로그램" },
+    { "id": "signature-face", "name": "시그니처 윤곽", "summary": "목·어깨·데콜테부터 연결해 살피는 페이스 프로그램" },
+    { "id": "skin-regeneration", "name": "피부 재생", "summary": "현재 피부 컨디션에 맞춰 구성하는 집중 프로그램" },
+    { "id": "private-care", "name": "프라이빗 케어", "summary": "관리와 휴식을 한 흐름으로 연결하는 프라이빗 프로그램" }
+  ],
+  "locations": [
+    { "id": "cheongdam", "name": "청담점", "address": "서울특별시 강남구 선릉로162길 43, 2·3층" },
+    { "id": "jamsil", "name": "잠실점", "address": "서울특별시 송파구 삼학사로 100, 그랜드빌딩 7층 701호" },
+    { "id": "yeosu", "name": "여수점", "address": "전라남도 여수시 시청서4길 48-3, 2층" }
+  ]
+}
