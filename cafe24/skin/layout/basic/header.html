@@ -1,0 +1,58 @@
+<header class="gm-site-header" data-gm-header>
+  <div class="gm-header-inner">
+    <a class="gm-brand" href="/" aria-label="건강미 홈">
+      <span class="gm-brand-ko">건강미</span>
+      <span class="gm-brand-en">SPA &amp; AESTHETIC</span>
+    </a>
+
+    <nav class="gm-main-nav" aria-label="주요 메뉴">
+      <a href="/brand/index.html">건강미 소개</a>
+      <a href="/program/index.html">프로그램</a>
+      <a href="/results/index.html">변화 사례</a>
+      <a href="/location/index.html">지점 안내</a>
+      <a href="/journal/index.html">건강미 저널</a>
+      <a href="/product/list.html?cate_no=1">쇼핑몰</a>
+    </nav>
+
+    <div class="gm-header-tools">
+      <div module="Layout_statelogoff" class="gm-account-links">
+        <a href="/member/login.html">로그인</a>
+        <a href="/member/join.html">회원가입</a>
+        <a href="/order/basket.html">장바구니 <span class="{$basket_count_display|display}">{$basket_count}</span></a>
+      </div>
+      <div module="Layout_stateLogon" class="gm-account-links">
+        <a href="{$action_logout}">로그아웃</a>
+        <a href="/myshop/index.html">마이페이지</a>
+        <a href="/order/basket.html">장바구니 <span class="{$basket_count_display|display}">{$basket_count}</span></a>
+      </div>
+      <a class="gm-header-cta" href="https://pf.kakao.com/_HkuJG" target="_blank" rel="noopener">상담 예약</a>
+      <button class="gm-menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false" data-gm-menu-button>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="gm-shop-categories" module="Layout_category">
+    <!--@js(/js/module/layout/category.js)-->
+    <div class="gm-container">
+      <ul>
+        <li><a href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+        <li><a href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+        <li><a href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <nav class="gm-mobile-nav" aria-label="모바일 메뉴" data-gm-mobile-nav hidden>
+    <a href="/brand/index.html"><span>01</span><strong>건강미 소개</strong></a>
+    <a href="/program/index.html"><span>02</span><strong>프로그램</strong></a>
+    <a href="/results/index.html"><span>03</span><strong>변화 사례</strong></a>
+    <a href="/location/index.html"><span>04</span><strong>지점 안내</strong></a>
+    <a href="/journal/index.html"><span>05</span><strong>건강미 저널</strong></a>
+    <a href="/product/list.html?cate_no=1"><span>06</span><strong>쇼핑몰</strong></a>
+    <div class="gm-mobile-actions">
+      <a href="/member/login.html">로그인</a>
+      <a href="https://pf.kakao.com/_HkuJG" target="_blank" rel="noopener">상담 예약</a>
+    </div>
+  </nav>
+</header>
