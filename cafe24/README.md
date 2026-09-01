@@ -25,21 +25,43 @@
 
 ```text
 cafe24/
-├─ assets/
-│  ├─ css/
-│  │  ├─ tokens.css       # 컬러, 폰트, 폭, 간격, radius
-│  │  ├─ base.css         # reset, typography, global element
-│  │  ├─ layout.css       # header, footer, container, section
-│  │  ├─ components.css   # button, cards, program rows, CTA
-│  │  └─ pages/
-│  │     └─ home.css      # 메인 전용
-│  └─ js/
-│     └─ site.js          # 메뉴, 접근성, 공통 interaction
-├─ data/
-│  └─ site-content.json   # 메뉴/지점/프로그램/핵심 문구 단일 원본
-└─ preview/
-   └─ index.html          # Cafe24 이식 전 정적 프리뷰
+├─ assets/                  # 독립 프리뷰용 디자인 시스템
+├─ data/                    # 콘텐츠 원본
+├─ preview/                 # Cafe24 이식 전 정적 프리뷰
+├─ skin/                    # 실제 Cafe24 스마트디자인 이식용
+│  ├─ index.html
+│  ├─ brand/index.html
+│  ├─ program/index.html
+│  ├─ results/index.html
+│  ├─ location/index.html
+│  ├─ journal/index.html
+│  ├─ product/list.html
+│  └─ layout/basic/
+│     ├─ main.html
+│     ├─ layout.html
+│     ├─ header.html
+│     ├─ footer.html
+│     ├─ css/
+│     │  ├─ gm.css
+│     │  └─ gm-cafe24-modules.css
+│     └─ js/gm.js
+└─ INSTALL-SKIN1.md         # ggmspa skin-skin1 적용 순서
 ```
+
+## `skin/`의 역할
+
+`skin/`은 일반 정적 HTML이 아니라 Cafe24 스마트디자인 문법을 사용합니다.
+
+- `<!--@layout(...)-->`
+- `<!--@import(...)-->`
+- `module="Layout_category"`
+- `module="Layout_statelogoff"`
+- `module="product_listmain_1"`
+- `module="product_listnormal"`
+- `module="board_listpackage_5"`
+- `{$product_name}`, `{$product_price}` 등 Cafe24 변수
+
+따라서 `cafe24/skin/`의 경로를 그대로 스마트디자인에 대응시켜 운영 스킨으로 이식할 수 있습니다.
 
 ## Cafe24 이식 원칙
 
@@ -47,19 +69,28 @@ cafe24/
 브랜드 소개, 프로그램, 변화 사례, 지점 안내는 커스텀 HTML 페이지로 제작합니다.
 
 ### 쇼핑 기능
-상품 목록, 상품 상세, 장바구니, 주문, 회원, 마이페이지는 Cafe24 기본 모듈을 유지하고 CSS를 브랜드 시스템에 맞게 덮어씁니다.
+상품 목록은 건강미 템플릿으로 제작하되, 상품 상세/장바구니/주문/회원/마이페이지는 Cafe24 기본 모듈을 유지합니다.
+
+`gm-cafe24-modules.css`가 기존 `xans-product-detail`, `xans-product-additional` 등에 브랜드 스타일을 적용하므로 기능 HTML을 불필요하게 교체하지 않습니다.
 
 ### 게시판
-건강미 저널, 공지, 이벤트, 후기 등은 Cafe24 게시판 모듈을 활용합니다.
+건강미 저널은 1차로 Cafe24 자유게시판 `board_no=5`를 연결합니다. 실제 운영 게시판을 새로 만들 경우 시퀀스를 변경합니다.
 
 ## 개발 규칙
 
 - CSS에서 `!important`는 Cafe24 모듈 충돌 대응이 필요한 경우 외에는 사용하지 않습니다.
+- 신규 커스텀 클래스는 `gm-` prefix를 사용합니다.
 - 페이지별 CSS가 공통 컴포넌트를 다시 정의하지 않습니다.
 - JS는 DOM 존재 여부를 확인한 뒤 실행합니다.
-- 외부 CDN 이미지 URL은 임시 프리뷰에서만 사용하고 최종 운영 시 Cafe24 파일 경로로 이전합니다.
-- 텍스트/지점/프로그램 정보는 `data/site-content.json`을 기준으로 관리합니다.
+- 상품/주문/회원 관련 Cafe24 변수와 module 속성을 임의로 삭제하지 않습니다.
+- 외부 CDN 이미지는 임시 사용 후 Cafe24 파일 경로로 이전합니다.
+
+## 적용 대상
+
+현재 적용 예정 스킨은 `ggmspa.cafe24.com/skin-skin1`입니다.
+
+실제 복사 순서와 관리자 설정은 [`INSTALL-SKIN1.md`](./INSTALL-SKIN1.md)를 기준으로 진행합니다.
 
 ## 기존 프로토타입 처리
 
-루트의 기존 HTML/CSS/JS는 현재 디자인과 콘텐츠를 확인하기 위한 `legacy prototype`로 유지합니다. 새 구조가 검수된 뒤 Cafe24 스킨에 이식하고, 그 이후 필요하면 legacy 파일을 `legacy/`로 이동합니다.
+루트의 기존 HTML/CSS/JS는 현재 디자인과 콘텐츠를 확인하기 위한 `legacy prototype`로 유지합니다. 새 구조 검수 후 필요하면 `legacy/`로 이동합니다.
