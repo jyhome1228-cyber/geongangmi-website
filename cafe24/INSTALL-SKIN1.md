@@ -20,6 +20,7 @@ Cafe24 관리자 > 디자인 > 디자인 보관함에서 `skin-skin1`을 복제�
 | `cafe24/skin/layout/basic/header.html` | `/layout/basic/header.html` |
 | `cafe24/skin/layout/basic/footer.html` | `/layout/basic/footer.html` |
 | `cafe24/skin/layout/basic/css/gm.css` | `/layout/basic/css/gm.css` |
+| `cafe24/skin/layout/basic/css/gm-cafe24-modules.css` | `/layout/basic/css/gm-cafe24-modules.css` |
 | `cafe24/skin/layout/basic/js/gm.js` | `/layout/basic/js/gm.js` |
 | `cafe24/skin/brand/index.html` | `/brand/index.html` |
 | `cafe24/skin/program/index.html` | `/program/index.html` |
@@ -39,7 +40,7 @@ Cafe24 관리자 > 디자인 > 디자인 보관함에서 `skin-skin1`을 복제�
 - `/myshop/*`
 - 결제/옵션/쿠폰/리뷰/Q&A 관련 모듈 파일
 
-이 영역은 Cafe24 동작 모듈이 많기 때문에 기존 HTML은 살리고 `gm.css`의 브랜드 스타일을 추가하는 방식으로 2차 정리합니다.
+상품 상세는 기존 HTML을 유지해도 공통 레이아웃에서 `gm-cafe24-modules.css`를 불러오므로 `xans-product-detail`, `xans-product-additional` 기본 모듈에 건강미 스타일이 적용됩니다. 옵션/구매 기능을 보존하기 위해 상품상세 HTML 자체는 현재 단계에서 교체하지 않습니다.
 
 ## 4. 관리자 설정
 
@@ -62,15 +63,16 @@ Cafe24 관리자 > 디자인 > 디자인 보관함에서 `skin-skin1`을 복제�
 ## 5. 적용 순서
 
 1. `layout/basic/css/gm.css`
-2. `layout/basic/js/gm.js`
-3. `header.html`, `footer.html`
-4. `main.html`, `layout.html`
-5. `index.html`
-6. 브랜드 커스텀 페이지 5개
-7. `product/list.html`
-8. 관리자 메인 상품 진열 / 카테고리 / 저널 게시판 설정
-9. 모바일 확인
-10. 상품 상세 스타일 2차 작업
+2. `layout/basic/css/gm-cafe24-modules.css`
+3. `layout/basic/js/gm.js`
+4. `header.html`, `footer.html`
+5. `main.html`, `layout.html`
+6. `index.html`
+7. 브랜드 커스텀 페이지 5개
+8. `product/list.html`
+9. 관리자 메인 상품 진열 / 카테고리 / 저널 게시판 설정
+10. 상품 상세, 장바구니, 주문, 회원 화면 동작 확인
+11. 모바일 확인
 
 ## 6. 이미지
 
@@ -84,3 +86,4 @@ Cafe24 관리자 > 디자인 > 디자인 보관함에서 `skin-skin1`을 복제�
 - 상품/주문/회원 기능은 디자인보다 동작 보존을 우선합니다.
 - 커스텀 브랜드 페이지는 `<!--@layout(/layout/basic/layout.html)-->`을 공통으로 사용합니다.
 - 모든 신규 스타일은 `gm-` prefix를 사용해 Cafe24 기본 클래스와 충돌을 줄입니다.
+- `xans-` 기본 클래스는 HTML 교체가 아니라 어댑터 CSS에서만 제한적으로 재정의합니다.
