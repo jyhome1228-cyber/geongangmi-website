@@ -1,0 +1,47 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<section class="gm-shop-page">
+  <div class="gm-container">
+    <header class="gm-shop-title" module="product_headcategory">
+      <span class="gm-eyebrow">GEONGANGMI SHOP</span>
+      <h1 class="gm-h2">{$title_text_or_image}</h1>
+      <div class="banner">{$top_image_tag}</div>
+    </header>
+
+    <div class="gm-product-toolbar" module="product_normalmenu">
+      <!-- $compare_page = /product/compare.html -->
+      <p>전체 <strong>{$total_count}</strong>개</p>
+      <div>
+        <a href="{$param_5}" {$style_5}>신상품</a>
+        <a href="{$param_3}" {$style_3}>낮은가격</a>
+        <a href="{$param_4}" {$style_4}>높은가격</a>
+      </div>
+    </div>
+
+    <div module="product_listnormal">
+      <!--
+        $count = 12
+        $basket_result = /product/add_basket.html
+        $basket_option = /product/basket_option.html
+      -->
+      <ul class="gm-product-grid">
+        <li class="gm-product-item" id="anchorBoxId_{$product_no}"><div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$image_medium}" alt="{$product_name}"></a></div><div class="information"><p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p><p class="price">{$product_price}</p><p class="icon">{$soldout_icon} {$new_icon} {$recommend_icon} {$product_icons}</p></div></li>
+        <li class="gm-product-item" id="anchorBoxId_{$product_no}"><div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$image_medium}" alt="{$product_name}"></a></div><div class="information"><p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p><p class="price">{$product_price}</p><p class="icon">{$soldout_icon} {$new_icon} {$recommend_icon} {$product_icons}</p></div></li>
+        <li class="gm-product-item" id="anchorBoxId_{$product_no}"><div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$image_medium}" alt="{$product_name}"></a></div><div class="information"><p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p><p class="price">{$product_price}</p><p class="icon">{$soldout_icon} {$new_icon} {$recommend_icon} {$product_icons}</p></div></li>
+        <li class="gm-product-item" id="anchorBoxId_{$product_no}"><div class="thumbnail"><a href="/product/detail.html{$param}"><img src="{$image_medium}" alt="{$product_name}"></a></div><div class="information"><p class="name"><a href="/product/detail.html{$param}">{$product_name}</a></p><p class="price">{$product_price}</p><p class="icon">{$soldout_icon} {$new_icon} {$recommend_icon} {$product_icons}</p></div></li>
+      </ul>
+    </div>
+
+    <div module="product_normalpaging" class="gm-product-paging">
+      <a href="{$param_before}">이전</a>
+      <ol>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+      </ol>
+      <a href="{$param_next}">다음</a>
+    </div>
+  </div>
+</section>
