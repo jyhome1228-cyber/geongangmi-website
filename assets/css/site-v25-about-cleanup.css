@@ -1,0 +1,61 @@
+/* Healthmi About — FIRST VISIT cleanup */
+
+/* Remove the double background treatment entirely */
+body[data-page="about"] .about-section--soft{
+  background:#fff!important;
+}
+
+body[data-page="about"] .about-first-steps{
+  background:transparent!important;
+}
+
+body[data-page="about"] .about-first-step{
+  background:transparent!important;
+  transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1)!important;
+}
+
+/* No gradient/fill animation on the row */
+body[data-page="about"] .about-first-step::after{
+  display:none!important;
+  content:none!important;
+}
+
+body[data-page="about"] .about-first-step:hover{
+  background:transparent!important;
+}
+
+/* Keep only the rail + node as the visual cue */
+body[data-page="about"] .about-first-steps::before{
+  background:#d9dedd!important;
+}
+
+body[data-page="about"] .about-first-step::before{
+  background:#fff!important;
+  border-color:#b9c3c5!important;
+  box-shadow:0 0 0 4px #fff!important;
+}
+
+body[data-page="about"] .about-first-step.is-visible::before{
+  background:var(--ab-brand)!important;
+  border-color:var(--ab-brand)!important;
+  box-shadow:0 0 0 4px #fff!important;
+}
+
+/* Motion stays restrained: reveal only, no color block */
+body[data-page="about"] .about-first-step[data-reveal]{
+  opacity:0;
+  transform:translateY(12px);
+}
+
+body[data-page="about"] .about-first-step[data-reveal].is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media (prefers-reduced-motion:reduce){
+  body[data-page="about"] .about-first-step[data-reveal]{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+}
