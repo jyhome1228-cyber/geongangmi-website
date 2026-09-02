@@ -7,606 +7,15 @@
   <link rel="icon" href="public/logo.svg">
   <link rel="stylesheet" href="assets/css/common.css">
   <title>건강미 소개 | 건강미</title>
-
-  <style>
-    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-
-    body[data-page="about"]{
-      --about-ink:#252a2b;
-      --about-muted:#667275;
-      --about-blue:#5E7681;
-      --about-line:#dde2e0;
-      --about-soft:#f7f6f2;
-      --about-max:1280px;
-      background:#fff;
-      color:var(--about-ink);
-      font-family:'Pretendard','Noto Sans KR',sans-serif;
-    }
-
-    body[data-page="about"] main{
-      overflow:hidden;
-      background:#fff;
-    }
-
-    body[data-page="about"] h1,
-    body[data-page="about"] h2,
-    body[data-page="about"] h3,
-    body[data-page="about"] p{
-      word-break:keep-all;
-    }
-
-    body[data-page="about"] .about-wrap{
-      width:min(100%,var(--about-max));
-      margin:0 auto;
-      padding:0 40px;
-    }
-
-    body[data-page="about"] .about-section{
-      padding:92px 0;
-      border-top:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-section--soft{
-      background:var(--about-soft);
-      border-top:0;
-    }
-
-    body[data-page="about"] .about-eyebrow{
-      margin:0 0 15px;
-      color:var(--about-blue);
-      font-size:11px;
-      line-height:1;
-      font-weight:600;
-      letter-spacing:.14em;
-    }
-
-    body[data-page="about"] .about-title{
-      margin:0;
-      max-width:760px;
-      color:var(--about-ink);
-      font-size:clamp(36px,3.4vw,44px);
-      line-height:1.34;
-      font-weight:500;
-      letter-spacing:-.045em;
-    }
-
-    body[data-page="about"] .about-h2{
-      margin:0;
-      color:var(--about-ink);
-      font-size:clamp(27px,2.3vw,33px);
-      line-height:1.45;
-      font-weight:500;
-      letter-spacing:-.04em;
-    }
-
-    body[data-page="about"] .about-h3{
-      margin:0;
-      color:var(--about-ink);
-      font-size:18px;
-      line-height:1.5;
-      font-weight:500;
-      letter-spacing:-.025em;
-    }
-
-    body[data-page="about"] .about-lead{
-      margin:0;
-      color:#4f5b5e;
-      font-size:16px;
-      line-height:1.85;
-      font-weight:400;
-      letter-spacing:-.022em;
-    }
-
-    body[data-page="about"] .about-copy{
-      margin:0;
-      color:var(--about-muted);
-      font-size:15px;
-      line-height:1.9;
-      font-weight:400;
-      letter-spacing:-.018em;
-    }
-
-    body[data-page="about"] .about-button{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:154px;
-      height:46px;
-      padding:0 22px;
-      border:1px solid var(--about-blue);
-      background:var(--about-blue);
-      color:#fff;
-      font-size:12px;
-      font-weight:600;
-      transition:.2s ease;
-    }
-
-    body[data-page="about"] .about-button:hover{
-      background:#fff;
-      color:var(--about-blue);
-    }
-
-    body[data-page="about"] .about-button--line{
-      background:#fff;
-      color:var(--about-blue);
-    }
-
-    body[data-page="about"] .about-button--line:hover{
-      background:var(--about-blue);
-      color:#fff;
-    }
-
-    /* HERO */
-    body[data-page="about"] .about-hero{
-      display:grid;
-      grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
-      min-height:620px;
-      background:#fff;
-      border-bottom:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-hero-copy{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding:76px 48px 76px max(40px,calc((100vw - var(--about-max))/2 + 40px));
-    }
-
-    body[data-page="about"] .about-hero-copy .about-lead{
-      max-width:560px;
-      margin-top:26px;
-    }
-
-    body[data-page="about"] .about-hero-note{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:32px;
-      color:var(--about-blue);
-      font-size:10px;
-      line-height:1.4;
-      font-weight:600;
-      letter-spacing:.08em;
-    }
-
-    body[data-page="about"] .about-hero-image{
-      min-height:620px;
-      overflow:hidden;
-      background:#eef1ef;
-    }
-
-    body[data-page="about"] .about-hero-image img{
-      display:block;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    /* INTRO / VIEW */
-    body[data-page="about"] .about-split{
-      display:grid;
-      grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
-      gap:96px;
-      align-items:start;
-    }
-
-    body[data-page="about"] .about-split-copy{
-      max-width:560px;
-      padding-top:3px;
-    }
-
-    body[data-page="about"] .about-split-copy .about-lead{
-      margin-bottom:18px;
-      color:var(--about-ink);
-      font-size:18px;
-      line-height:1.75;
-    }
-
-    body[data-page="about"] .about-keywords{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      margin-top:58px;
-      border-top:1px solid var(--about-line);
-      border-bottom:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-keyword{
-      padding:26px 22px 28px;
-      border-right:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-keyword:last-child{
-      border-right:0;
-    }
-
-    body[data-page="about"] .about-keyword small{
-      display:block;
-      margin-bottom:22px;
-      color:var(--about-blue);
-      font-size:9px;
-      font-weight:600;
-      letter-spacing:.1em;
-    }
-
-    body[data-page="about"] .about-keyword strong{
-      display:block;
-      margin-bottom:7px;
-      font-size:16px;
-      font-weight:500;
-      letter-spacing:-.02em;
-    }
-
-    body[data-page="about"] .about-keyword span{
-      color:var(--about-muted);
-      font-size:12px;
-      line-height:1.7;
-    }
-
-    /* PROCESS */
-    body[data-page="about"] .about-process-head{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:96px;
-      margin-bottom:48px;
-    }
-
-    body[data-page="about"] .about-process-head .about-copy{
-      max-width:540px;
-      margin-left:auto;
-    }
-
-    body[data-page="about"] .about-process-list{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      border-top:1px solid var(--about-line);
-      border-bottom:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-process-item{
-      min-height:208px;
-      padding:24px 20px;
-      border-right:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-process-item:last-child{
-      border-right:0;
-    }
-
-    body[data-page="about"] .about-process-item small{
-      display:block;
-      margin-bottom:44px;
-      color:var(--about-blue);
-      font-size:9px;
-      font-weight:600;
-      letter-spacing:.1em;
-    }
-
-    body[data-page="about"] .about-process-item h3{
-      margin:0 0 9px;
-      font-size:16px;
-      line-height:1.5;
-      font-weight:500;
-      letter-spacing:-.025em;
-    }
-
-    body[data-page="about"] .about-process-item p{
-      margin:0;
-      color:var(--about-muted);
-      font-size:12px;
-      line-height:1.75;
-    }
-
-    /* TOUCH = THINKING */
-    body[data-page="about"] .about-thinking{
-      padding:96px 0;
-      background:#fff;
-      border-top:1px solid var(--about-line);
-      border-bottom:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-thinking-grid{
-      display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:96px;
-      align-items:start;
-    }
-
-    body[data-page="about"] .about-thinking-mark{
-      color:var(--about-blue);
-      font-size:13px;
-      line-height:1.4;
-      font-weight:600;
-      letter-spacing:.12em;
-    }
-
-    body[data-page="about"] .about-thinking-copy .about-copy{
-      max-width:600px;
-      margin-top:22px;
-    }
-
-    /* FIRST VISIT */
-    body[data-page="about"] .about-first-card{
-      display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:96px;
-      align-items:start;
-    }
-
-    body[data-page="about"] .about-first-intro .about-lead{
-      max-width:560px;
-      margin-top:22px;
-    }
-
-    body[data-page="about"] .about-first-steps{
-      border-top:1px solid #d6d9d5;
-    }
-
-    body[data-page="about"] .about-first-step{
-      display:grid;
-      grid-template-columns:62px 1fr;
-      gap:12px 18px;
-      padding:18px 0;
-      border-bottom:1px solid #d6d9d5;
-    }
-
-    body[data-page="about"] .about-first-step span{
-      color:var(--about-blue);
-      font-size:10px;
-      font-weight:600;
-    }
-
-    body[data-page="about"] .about-first-step strong{
-      font-size:14px;
-      font-weight:500;
-    }
-
-    body[data-page="about"] .about-first-step p{
-      grid-column:2;
-      margin:0;
-      color:var(--about-muted);
-      font-size:12px;
-      line-height:1.7;
-    }
-
-    /* CONCERNS */
-    body[data-page="about"] .about-concerns-head{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:96px;
-      margin-bottom:42px;
-    }
-
-    body[data-page="about"] .about-concerns-head .about-copy{
-      max-width:520px;
-      margin-left:auto;
-    }
-
-    body[data-page="about"] .about-concerns-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      border-top:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-concern{
-      padding:30px 32px 32px 0;
-      border-bottom:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-concern:nth-child(odd){
-      border-right:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-concern:nth-child(even){
-      padding-left:32px;
-    }
-
-    body[data-page="about"] .about-concern small{
-      display:block;
-      margin-bottom:24px;
-      color:var(--about-blue);
-      font-size:9px;
-      font-weight:600;
-      letter-spacing:.1em;
-    }
-
-    body[data-page="about"] .about-concern h3{
-      margin:0 0 10px;
-      font-size:19px;
-      line-height:1.5;
-      font-weight:500;
-      letter-spacing:-.03em;
-    }
-
-    body[data-page="about"] .about-concern p{
-      max-width:500px;
-      margin:0;
-      color:var(--about-muted);
-      font-size:13px;
-      line-height:1.8;
-    }
-
-    body[data-page="about"] .about-concerns-action{
-      margin-top:30px;
-    }
-
-    /* PEOPLE */
-    body[data-page="about"] .about-people-panel{
-      display:grid;
-      grid-template-columns:.82fr 1.18fr;
-      gap:96px;
-      align-items:start;
-    }
-
-    body[data-page="about"] .about-standard-list{
-      border-top:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-standard-item{
-      display:grid;
-      grid-template-columns:42px 1fr;
-      align-items:center;
-      padding:18px 0;
-      border-bottom:1px solid var(--about-line);
-    }
-
-    body[data-page="about"] .about-standard-item span{
-      color:var(--about-blue);
-      font-size:9px;
-      font-weight:600;
-    }
-
-    body[data-page="about"] .about-standard-item strong{
-      font-size:15px;
-      font-weight:500;
-      letter-spacing:-.02em;
-    }
-
-    body[data-page="about"] .about-people-copy .about-lead{
-      margin:22px 0 17px;
-      color:var(--about-ink);
-      font-size:18px;
-      line-height:1.75;
-    }
-
-    /* SPACE */
-    body[data-page="about"] .about-space-head{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:96px;
-      margin-bottom:40px;
-    }
-
-    body[data-page="about"] .about-space-head .about-copy{
-      max-width:500px;
-      margin-left:auto;
-    }
-
-    body[data-page="about"] .about-space-gallery{
-      display:grid;
-      grid-template-columns:1.25fr .82fr .82fr;
-      gap:10px;
-    }
-
-    body[data-page="about"] .about-space-gallery figure{
-      margin:0;
-      overflow:hidden;
-      background:#f1f2f0;
-    }
-
-    body[data-page="about"] .about-space-gallery figure:first-child{
-      aspect-ratio:1.15/1;
-    }
-
-    body[data-page="about"] .about-space-gallery figure:not(:first-child){
-      aspect-ratio:.76/1;
-    }
-
-    body[data-page="about"] .about-space-gallery img{
-      display:block;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform .45s ease;
-    }
-
-    body[data-page="about"] .about-space-gallery figure:hover img{
-      transform:scale(1.015);
-    }
-
-    body[data-page="about"] .about-space-action{
-      margin-top:28px;
-    }
-
-    /* CLOSING */
-    body[data-page="about"] .about-closing{
-      padding:100px 0 108px;
-      background:#fff;
-      border-top:1px solid var(--about-line);
-      text-align:center;
-    }
-
-    body[data-page="about"] .about-closing .about-h2{
-      max-width:760px;
-      margin:0 auto;
-    }
-
-    body[data-page="about"] .about-closing .about-copy{
-      max-width:570px;
-      margin:22px auto 0;
-    }
-
-    body[data-page="about"] .about-closing-actions{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      margin-top:32px;
-    }
-
-    @media(max-width:1080px){
-      body[data-page="about"] .about-wrap{padding:0 24px}
-      body[data-page="about"] .about-section{padding:76px 0}
-      body[data-page="about"] .about-hero{grid-template-columns:1fr;min-height:auto}
-      body[data-page="about"] .about-hero-copy{padding:74px 24px 64px;min-height:430px}
-      body[data-page="about"] .about-hero-image{min-height:500px}
-      body[data-page="about"] .about-split,
-      body[data-page="about"] .about-process-head,
-      body[data-page="about"] .about-thinking-grid,
-      body[data-page="about"] .about-first-card,
-      body[data-page="about"] .about-concerns-head,
-      body[data-page="about"] .about-people-panel,
-      body[data-page="about"] .about-space-head{grid-template-columns:1fr;gap:34px}
-      body[data-page="about"] .about-process-head .about-copy,
-      body[data-page="about"] .about-concerns-head .about-copy,
-      body[data-page="about"] .about-space-head .about-copy{margin-left:0}
-      body[data-page="about"] .about-keywords{grid-template-columns:repeat(2,1fr)}
-      body[data-page="about"] .about-keyword:nth-child(2){border-right:0}
-      body[data-page="about"] .about-keyword:nth-child(-n+2){border-bottom:1px solid var(--about-line)}
-      body[data-page="about"] .about-process-list{grid-template-columns:repeat(2,1fr)}
-      body[data-page="about"] .about-process-item{border-bottom:1px solid var(--about-line)}
-      body[data-page="about"] .about-process-item:nth-child(even){border-right:0}
-      body[data-page="about"] .about-process-item:last-child{grid-column:1/-1;border-bottom:0}
-      body[data-page="about"] .about-space-gallery{grid-template-columns:1fr 1fr}
-      body[data-page="about"] .about-space-gallery figure:first-child{grid-column:1/-1;aspect-ratio:16/8}
-      body[data-page="about"] .about-space-gallery figure:not(:first-child){aspect-ratio:4/3}
-    }
-
-    @media(max-width:640px){
-      body[data-page="about"] .about-wrap{padding:0 22px}
-      body[data-page="about"] .about-section{padding:62px 0}
-      body[data-page="about"] .about-title{font-size:32px;line-height:1.4}
-      body[data-page="about"] .about-h2{font-size:25px;line-height:1.5}
-      body[data-page="about"] .about-lead{font-size:15px}
-      body[data-page="about"] .about-hero-copy{padding:58px 22px 52px;min-height:380px}
-      body[data-page="about"] .about-hero-image{min-height:360px}
-      body[data-page="about"] .about-keywords{grid-template-columns:1fr;margin-top:42px}
-      body[data-page="about"] .about-keyword{padding:22px 0;border-right:0!important;border-bottom:1px solid var(--about-line)!important}
-      body[data-page="about"] .about-keyword:last-child{border-bottom:0!important}
-      body[data-page="about"] .about-process-list{grid-template-columns:1fr}
-      body[data-page="about"] .about-process-item,
-      body[data-page="about"] .about-process-item:nth-child(even){min-height:auto;padding:22px 0;border-right:0;border-bottom:1px solid var(--about-line)}
-      body[data-page="about"] .about-process-item:last-child{grid-column:auto;border-bottom:0}
-      body[data-page="about"] .about-process-item small{margin-bottom:24px}
-      body[data-page="about"] .about-concerns-grid{grid-template-columns:1fr}
-      body[data-page="about"] .about-concern,
-      body[data-page="about"] .about-concern:nth-child(even){padding:24px 0;border-right:0}
-      body[data-page="about"] .about-space-gallery{grid-template-columns:1fr}
-      body[data-page="about"] .about-space-gallery figure:first-child,
-      body[data-page="about"] .about-space-gallery figure:not(:first-child){grid-column:auto;aspect-ratio:4/3}
-      body[data-page="about"] .about-closing{padding:72px 0 86px}
-      body[data-page="about"] .about-closing-actions{flex-direction:column;align-items:stretch;padding:0 22px}
-      body[data-page="about"] .about-button{width:100%}
-    }
-  </style>
 </head>
 
 <body data-page="about">
 <header class="site-header" data-header></header>
 
 <main>
-
   <section class="about-hero">
     <div class="about-hero-copy">
-      <p class="about-eyebrow">ABOUT GEONGANGMI</p>
+      <p class="about-eyebrow">01 / ABOUT GEONGANGMI</p>
       <h1 class="about-title">누구나 시작할 수 있지만,<br>누구에게나 같은 관리를 하지는 않습니다.</h1>
       <p class="about-lead">건강미는 안면 윤곽, 체형 밸런스, 부종과 피부 컨디션을 보이는 부위만으로 판단하지 않습니다. 지금의 상태와 몸의 연결을 함께 확인하고, 한 사람에게 필요한 관리 방향을 설계합니다.</p>
       <div class="about-hero-note">
@@ -624,7 +33,7 @@
     <div class="about-wrap">
       <div class="about-split">
         <div>
-          <p class="about-eyebrow">HOW WE SEE</p>
+          <p class="about-eyebrow">02 / HOW WE SEE</p>
           <h2 class="about-h2">보이는 곳보다,<br>달라진 이유를 먼저 봅니다.</h2>
         </div>
         <div class="about-split-copy">
@@ -646,7 +55,7 @@
     <div class="about-wrap">
       <div class="about-process-head">
         <div>
-          <p class="about-eyebrow">WHY GEONGANGMI</p>
+          <p class="about-eyebrow">03 / WHY GEONGANGMI</p>
           <h2 class="about-h2">건강미의 관리는<br>설명에서 시작합니다.</h2>
         </div>
         <p class="about-copy">같은 프로그램을 선택해도 모든 사람에게 같은 순서와 강도를 적용하지 않습니다. 현재 상태를 확인하고, 왜 이 부위를 보는지 설명한 뒤 필요한 범위와 순서를 조정합니다.</p>
@@ -665,7 +74,7 @@
   <section class="about-thinking">
     <div class="about-wrap">
       <div class="about-thinking-grid">
-        <div class="about-thinking-mark">TOUCH = THINKING</div>
+        <div class="about-thinking-mark">04 / TOUCH = THINKING</div>
         <div class="about-thinking-copy">
           <p class="about-eyebrow">OUR PHILOSOPHY</p>
           <h2 class="about-h2">터치는 곧 생각입니다.</h2>
@@ -679,7 +88,7 @@
     <div class="about-wrap">
       <div class="about-first-card">
         <div class="about-first-intro">
-          <p class="about-eyebrow">FIRST VISIT</p>
+          <p class="about-eyebrow">05 / FIRST VISIT</p>
           <h2 class="about-h2">처음이어도 어렵지 않습니다.<br>지금의 고민부터 이야기하면 됩니다.</h2>
           <p class="about-lead">어떤 프로그램을 받아야 할지 미리 정하지 않아도 괜찮습니다. 상담과 상태 확인 후 현재 필요한 방향부터 함께 정합니다.</p>
         </div>
@@ -699,7 +108,7 @@
     <div class="about-wrap">
       <div class="about-concerns-head">
         <div>
-          <p class="about-eyebrow">CORE CONCERNS</p>
+          <p class="about-eyebrow">06 / CORE CONCERNS</p>
           <h2 class="about-h2">이런 고민으로<br>건강미를 찾습니다.</h2>
         </div>
         <p class="about-copy">건강미의 주력은 안면 윤곽과 체형 밸런스입니다. 한 부위의 모양만 보기보다 주변 부위와 전체적인 연결을 함께 확인합니다.</p>
@@ -720,7 +129,7 @@
     <div class="about-wrap">
       <div class="about-people-panel">
         <div>
-          <p class="about-eyebrow">THERAPIST STANDARD</p>
+          <p class="about-eyebrow">07 / THERAPIST STANDARD</p>
           <div class="about-standard-list">
             <div class="about-standard-item"><span>01</span><strong>READ · 상태를 읽는 기준</strong></div>
             <div class="about-standard-item"><span>02</span><strong>EXPLAIN · 이해할 수 있게 설명하는 과정</strong></div>
@@ -742,7 +151,7 @@
     <div class="about-wrap">
       <div class="about-space-head">
         <div>
-          <p class="about-eyebrow">SPACE</p>
+          <p class="about-eyebrow">08 / SPACE</p>
           <h2 class="about-h2">관리에 집중할 수 있도록<br>공간까지 차분하게 설계합니다.</h2>
         </div>
         <p class="about-copy">과한 장식보다 상담과 관리에 집중할 수 있는 동선, 프라이빗한 관리 환경과 편안한 머무름을 중요하게 생각합니다.</p>
@@ -760,7 +169,7 @@
 
   <section class="about-closing">
     <div class="about-wrap">
-      <p class="about-eyebrow">GEONGANGMI</p>
+      <p class="about-eyebrow">09 / GEONGANGMI</p>
       <h2 class="about-h2">건강미가 원하는 것은<br>관리받은 순간만의 변화가 아닙니다.</h2>
       <p class="about-copy">내 몸을 조금 더 이해하고, 지금 필요한 관리의 방향을 알게 되는 것. 건강미는 그 과정이 오래 이어질 수 있도록 함께합니다.</p>
       <div class="about-closing-actions">
@@ -769,7 +178,6 @@
       </div>
     </div>
   </section>
-
 </main>
 
 <footer class="site-footer" data-footer></footer>
