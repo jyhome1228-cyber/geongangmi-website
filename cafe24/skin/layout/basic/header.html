@@ -1,7 +1,8 @@
-<div class="main_top_banner ez-align-left" data-ez-module="top-banner" data-ez-align="left" data-ez-role="style.color" data-ez-display="visible" data-ez="contents-0yn9mjy-1">
+<!--@css(/layout/basic/css/gm-header.css)-->
+<div class="main_top_banner ggm-top-banner ez-align-left" data-ez-module="top-banner" data-ez-align="left" data-ez-role="style.color" data-ez-display="visible" data-ez="contents-0yn9mjy-1">
 	<div class="top_banner_box_inner">
 		<div class="top_banner_text"><!-- 최상단 배너 수정하는곳 -->
-			<a data-ez-role="a" href="#" data-href="#" target="_self" style="color: rgb(0, 0, 0);">첫 쇼핑을 지원하는 3,000원 할인 회원가입 쿠폰</a>
+			<a data-ez-role="a" href="/program/index.html" data-href="/program/index.html" target="_self" style="color: rgb(0, 0, 0);">건강미 첫 방문 상담 · 현재의 상태부터 함께 확인합니다</a>
 		</div><!-- //top_banner_text -->
 
 		<div class="top_banner_close" data-ez-role="close">
@@ -10,7 +11,7 @@
 		</div><!-- //top_banner_close -->
 	</div><!-- //top_banner_box_inner -->
 </div>
-<header id="header" class="layout01" data-ez-layout="layout01" data-ez="contents-011yfh3-1">
+<header id="header" class="layout01 ggm-header" data-ez-layout="layout01" data-ez="contents-011yfh3-1">
 	<ez-prop data-version="1.0.0" type="layout">
 		<ez-var data-prop="layout" data-namespace="ez.layout.header.layout" data-type="array">
 			<ez-item data-id="layout01" data-name="1단 기본형"></ez-item>
@@ -40,7 +41,8 @@
 					<li class="{$use_basket_cnt|display}"><a href="/order/basket.html">장바구니 <strong>{$basket_cnt}<span class="{$use_basket_price|display}">({$basket_price})</span></strong></a></li>
 				</ul>
                 </div>
-			</div>
+			</div><!-- //toparea_shoppinginfo -->
+
 			<div class="toparea_state" data-ez-group="top-util-menu" data-ez-role="list">
 				<a data-ez-item="join" module="Layout_statelogoff" href="/member/agreement.html">회원가입</a>
 				<a data-ez-item="login" module="Layout_statelogoff" href="/member/login.html">로그인</a>
@@ -49,27 +51,59 @@
 				<a data-ez-item="order" href="/myshop/order/list.html">주문조회</a>
 				<a data-ez-item="mypage" module="Layout_stateLogon" href="/myshop/index.html">마이페이지</a>
 				<a data-ez-item="recent" href="/product/recent_view_product.html">최근본상품</a>
-				<div class="toparea_state_board"><a data-ez-item="board" href="#none">고객센터<i aria-hidden="true" class="icon icoArrowBottom"></i></a><ul module="Layout_BoardInfo"><li><a href="{$link_board_list}">{$board_name}</a></li><li><a href="{$link_board_list}">{$board_name}</a></li></ul></div>
-			</div>
-		</div>
+				<div class="toparea_state_board">
+					<a data-ez-item="board" href="#none">고객센터<i aria-hidden="true" class="icon icoArrowBottom"></i></a>
+					<ul module="Layout_BoardInfo">
+						<li><a href="{$link_board_list}">{$board_name}</a></li>
+						<li><a href="{$link_board_list}">{$board_name}</a></li>
+					</ul>
+				</div>
+			</div><!-- //toparea_state -->
+		</div><!-- //toparea -->
+
 		<div class="top_nav_box" id="top_nav_box">
-			<div class="top_logo" module="Layout_LogoTop"><a href="/">{$mall_name}</a></div>
+			<div class="top_logo" module="Layout_LogoTop"><a href="/">{$mall_name}</a></div><!-- //top_logo -->
+
 			<div data-ez-module="menu-main/1" data-ez-mode="manual">
         <div class="xans-element- xans-layout xans-layout-category top_category">
-<ul><li><a href="/category/(%EB%8C%80%EB%B6%84%EB%A5%98)-Outerwear/24/">(대분류) Outerwear</a><ul class="sub_cate01"><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Jackets/29/">(중분류) Jackets</a></li><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Coats/30/">(중분류) Coats</a></li><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Blazers/31/">(중분류) Blazers</a></li></ul></li><li><a href="/category/(%EB%8C%80%EB%B6%84%EB%A5%98)-Tops/25/">(대분류) Tops</a><ul class="sub_cate01"><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Tees/32/">(중분류) Tees</a></li><li><a href="/category/(%EC%A4%91%EB%B6%84%EB%A5%98)-Shirts/33/">(중분류) Shirts</a></li></ul></li><li><a href="/category/(%EB%8C%80%EB%B6%84%EB%A5%98)-Dresses/26/">(대분류) Dresses</a></li></ul>
+<ul>
+	<li><a href="/brand/index.html">건강미 소개</a></li>
+	<li><a href="/program/index.html">프로그램</a></li>
+	<li><a href="/results/index.html">변화 사례</a></li>
+	<li><a href="/location/index.html">지점 안내</a></li>
+	<li><a href="/journal/index.html">건강미 저널</a></li>
+	<li><a href="/product/list.html?cate_no=1">SHOP</a></li>
+</ul>
 </div>
-      </div>
+      </div><!-- //menu-main/1 -->
+
+			<a class="ggm-consult" href="https://pf.kakao.com/_HkuJG" target="_blank" rel="noopener">상담 예약</a>
+
 			<ul class="top_mypage">
-				<li><a href="/myshop/index.html"><!--@import(/svg/icon-user.html)--></a></li>
+				<li class="ggm-login" module="Layout_statelogoff"><a href="/member/login.html">로그인</a></li>
+				<li class="ggm-login" module="Layout_stateLogon"><a href="/myshop/index.html">마이페이지</a></li>
 				<li><a href="/order/basket.html" module="Layout_orderBasketcount"><!--@import(/svg/icon-cart.html)--><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a></li>
 				<li class="top_search"><a href="javascript:;" class="eSearch"><!--@import(/svg/icon-search.html)--></a></li>
 				<li class="mo_nav"><a href="javascript:;" class="eNavFold"><i aria-hidden="true" class="icon icoNav"></i></a></li>
-			</ul>
-		</div>
+			</ul><!-- //top_mypage -->
+		</div><!-- //top_nav_box -->
+
 		<div module="Layout_SearchHeader">
-			<!-- $product_page=/product/detail.html $category_page=/product/list.html -->
-			<fieldset><legend>검색</legend><div class="wrap_search_box"><div class="search_find_product">Find Product</div><div class="top_search_box"><button type="button" class="btnClose"><img src="/SkinImg/img/pc_search_close.svg" alt="닫기"></button>{$form.keyword}<button type="button" class="btnDelete">삭제</button><button type="button" class="btnSearch" onclick="{$action_search_submit}"><img src="/SkinImg/img/top_search.svg" alt="검색"></button><ul class="autoDrop" id="{$search_auto_id}"></ul></div></div></fieldset>
-		</div>
-	</div>
+			<!--
+				$product_page=/product/detail.html
+				$category_page=/product/list.html
+			-->
+			<fieldset>
+				<legend>검색</legend>
+				<div class="wrap_search_box">
+					<div class="search_find_product">건강미 제품 검색</div>
+					<div class="top_search_box">
+						<button type="button" class="btnClose"><img src="/SkinImg/img/pc_search_close.svg" alt="닫기"></button>
+						{$form.keyword}<button type="button" class="btnDelete">삭제</button><button type="button" class="btnSearch" onclick="{$action_search_submit}"><img src="/SkinImg/img/top_search.svg" alt="검색"></button><ul class="autoDrop" id="{$search_auto_id}"></ul>
+					</div><!-- //top_search_box -->
+				</div>
+			</fieldset>
+		</div><!-- //Layout_SearchHeader -->
+	</div><!-- //inner -->
 </header>
 <!--#ez="1/3"-->
