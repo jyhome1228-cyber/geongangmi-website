@@ -1,26 +1,33 @@
 const appendStyle=(href,key)=>{if(document.querySelector(`link[data-site-style="${key}"]`))return;const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.dataset.siteStyle=key;document.head.appendChild(link);};
-appendStyle('assets/css/site-v5.css','compact-v5');
-appendStyle('assets/css/site-v6.css','quiet-v6');
-appendStyle('assets/css/site-v7.css','simple-grid-v7');
-appendStyle('assets/css/site-v8.css','typography-v8');
-appendStyle('assets/css/site-v9.css','spa-refinement-v9');
-appendStyle('assets/css/site-v10.css','listing-v10');
-appendStyle('assets/css/site-v11.css','readability-v11');
-appendStyle('assets/css/site-v12.css','layout-1440-v12');
-appendStyle('assets/css/site-v13.css','alignment-v13');
-appendStyle('assets/css/site-v14.css','real-images-v14');
-appendStyle('assets/css/site-v15.css','full-bleed-hero-v15');
-appendStyle('assets/css/site-v16.css','refined-content-v16');
-appendStyle('assets/css/site-v17.css','location-carousel-v17');
-appendStyle('assets/css/site-v18.css','about-cheongdam-shop-v18');
-appendStyle('assets/css/site-v19.css','shop-product-v19');
-appendStyle('assets/css/site-v20.css','shop-square-detail-v20');
-appendStyle('assets/css/site-v21.css','final-cta-v21');
-appendStyle('assets/css/site-v22.css','home-cta-right-v22');
-appendStyle('assets/css/site-v23-sost-system.css','sost-system-v23');
+
+const page=document.body.dataset.page;
+
+if(page==='about'){
+  appendStyle('assets/css/site-v23-sost-system.css','sost-system-v23');
+  appendStyle('assets/css/site-v24-about-editorial.css','about-editorial-v24');
+}else{
+  appendStyle('assets/css/site-v5.css','compact-v5');
+  appendStyle('assets/css/site-v6.css','quiet-v6');
+  appendStyle('assets/css/site-v7.css','simple-grid-v7');
+  appendStyle('assets/css/site-v8.css','typography-v8');
+  appendStyle('assets/css/site-v9.css','spa-refinement-v9');
+  appendStyle('assets/css/site-v10.css','listing-v10');
+  appendStyle('assets/css/site-v11.css','readability-v11');
+  appendStyle('assets/css/site-v12.css','layout-1440-v12');
+  appendStyle('assets/css/site-v13.css','alignment-v13');
+  appendStyle('assets/css/site-v14.css','real-images-v14');
+  appendStyle('assets/css/site-v15.css','full-bleed-hero-v15');
+  appendStyle('assets/css/site-v16.css','refined-content-v16');
+  appendStyle('assets/css/site-v17.css','location-carousel-v17');
+  appendStyle('assets/css/site-v18.css','about-cheongdam-shop-v18');
+  appendStyle('assets/css/site-v19.css','shop-product-v19');
+  appendStyle('assets/css/site-v20.css','shop-square-detail-v20');
+  appendStyle('assets/css/site-v21.css','final-cta-v21');
+  appendStyle('assets/css/site-v22.css','home-cta-right-v22');
+  appendStyle('assets/css/site-v23-sost-system.css','sost-system-v23');
+}
 
 const nav=[['about.html','건강미','about'],['program.html','프로그램 안내','program'],['results.html','변화 기록','results'],['journal.html','저널','journal'],['shop.html','건강미 샵','shop'],['reservation.html','지점 안내','reservation']];
-const page=document.body.dataset.page;
 const desktopLinks=nav.map(([href,label,key])=>`<a href="${href}" class="${page===key?'active':''}">${label}</a>`).join('');
 const mobileLinks=nav.map(([href,label,key],i)=>`<a href="${href}" class="${page===key?'active':''}"><span>${String(i+1).padStart(2,'0')}</span><strong>${label}</strong></a>`).join('');
 
