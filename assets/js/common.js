@@ -5,6 +5,7 @@ const page=document.body.dataset.page;
 if(page==='about'){
   appendStyle('assets/css/site-v23-sost-system.css','sost-system-v23');
   appendStyle('assets/css/site-v24-about-editorial.css','about-editorial-v24');
+  appendStyle('assets/css/site-v25-about-cleanup.css','about-cleanup-v25');
 }else{
   appendStyle('assets/css/site-v5.css','compact-v5');
   appendStyle('assets/css/site-v6.css','quiet-v6');
