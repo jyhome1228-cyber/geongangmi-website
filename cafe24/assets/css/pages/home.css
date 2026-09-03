@@ -1,0 +1,79 @@
+@import url('../components.css');
+
+.gm-hero {
+  position: relative;
+  min-height: min(820px, calc(100svh - var(--gm-header-h)));
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: #dfe5e3;
+}
+
+.gm-hero__media {
+  position: absolute;
+  inset: 0;
+}
+.gm-hero__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(23,30,32,.46), rgba(23,30,32,.06) 65%);
+}
+.gm-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.gm-hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, var(--gm-container));
+  margin-inline: auto;
+  padding: 0 var(--gm-gutter) clamp(64px, 9vw, 120px);
+  color: #fff;
+}
+.gm-hero__content p { max-width: 620px; margin-top: 24px; font-size: 18px; line-height: 1.75; }
+.gm-hero__actions { display: flex; gap: 10px; margin-top: 34px; }
+.gm-hero .gm-button { border-color: #fff; color: #fff; }
+.gm-hero .gm-button--primary { background: #fff; color: var(--gm-navy); }
+
+.gm-philosophy {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: min(9vw, 140px);
+  align-items: start;
+}
+.gm-philosophy__copy { max-width: 720px; }
+.gm-philosophy__copy .gm-body-lg { margin-bottom: 24px; color: var(--gm-ink); }
+.gm-philosophy__copy .gm-body { color: var(--gm-muted); }
+.gm-philosophy__copy .gm-text-link { margin-top: 34px; }
+
+.gm-visual-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr .8fr;
+  gap: 14px;
+}
+.gm-visual-grid figure { min-height: 480px; overflow: hidden; }
+.gm-visual-grid img { width: 100%; height: 100%; object-fit: cover; }
+
+.gm-statement {
+  padding-block: clamp(100px, 14vw, 190px);
+  background: var(--gm-navy);
+  color: #fff;
+}
+.gm-statement__inner { max-width: 900px; }
+.gm-statement .gm-eyebrow { color: #c8d3d5; }
+.gm-statement p:last-child { max-width: 720px; margin-top: 28px; color: rgba(255,255,255,.72); }
+
+@media (max-width: 900px) {
+  .gm-hero { min-height: 700px; }
+  .gm-hero__media::after { background: linear-gradient(0deg, rgba(23,30,32,.56), rgba(23,30,32,.06) 75%); }
+  .gm-philosophy { grid-template-columns: 1fr; gap: 36px; }
+  .gm-visual-grid { grid-template-columns: 1fr 1fr; }
+  .gm-visual-grid figure:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .gm-hero { min-height: 640px; }
+  .gm-hero__content p { font-size: 16px; }
+  .gm-hero__actions { flex-direction: column; align-items: stretch; }
+  .gm-visual-grid { grid-template-columns: 1fr; }
+  .gm-visual-grid figure, .gm-visual-grid figure:first-child { grid-column: auto; min-height: 340px; }
+}

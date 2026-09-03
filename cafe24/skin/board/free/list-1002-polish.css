@@ -1,0 +1,226 @@
+/* Healthmi board 1002 — final typography & hierarchy polish */
+
+.gm-brand-page,
+.gm-brand-page * {
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif !important;
+}
+
+.gm-brand-page {
+  color:#24292b;
+  font-size:17px;
+  font-weight:400;
+  line-height:1.72;
+  letter-spacing:-.03em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* English labels keep tracking; Korean copy uses -3% */
+.gm-label,
+.gm-label-inline,
+.gm-keyword small,
+.gm-process-item small,
+.gm-concern-meta small,
+.gm-standard-item span,
+.gm-hero-note span {
+  letter-spacing:.095em !important;
+}
+
+/* Main hierarchy */
+.gm-display,
+.gm-h2 {
+  color:#5E7681 !important;
+  letter-spacing:-.03em !important;
+}
+
+.gm-display {
+  max-width:1040px;
+  font-size:clamp(36px,3vw,44px);
+  font-weight:500;
+  line-height:1.2;
+}
+
+.gm-h2 {
+  max-width:920px;
+  font-size:clamp(26px,2vw,31px);
+  font-weight:520;
+  line-height:1.38;
+}
+
+.gm-section-head {
+  max-width:980px;
+  margin-bottom:46px;
+}
+
+.gm-label,
+.gm-label-inline {
+  margin-bottom:16px;
+  color:#8a9496;
+  font-size:12px;
+  font-weight:600;
+}
+
+.gm-lead {
+  max-width:780px;
+  color:#414b4e;
+  font-size:17px;
+  line-height:1.78;
+  letter-spacing:-.03em;
+}
+
+.gm-copy {
+  max-width:800px;
+  color:#6b7476;
+  font-size:16px;
+  line-height:1.78;
+  letter-spacing:-.03em;
+}
+
+.gm-section-head .gm-h2 + .gm-lead,
+.gm-section-head .gm-h2 + .gm-copy {
+  margin-top:22px;
+}
+
+.gm-section-head .gm-lead + .gm-copy {
+  margin-top:14px;
+}
+
+/* Section rhythm */
+.gm-section {
+  padding:96px 0;
+}
+
+.gm-hero {
+  padding:88px 0 94px;
+}
+
+.gm-hero-copy {
+  max-width:1080px;
+  margin-bottom:44px;
+}
+
+.gm-hero-copy .gm-lead {
+  margin-top:24px;
+}
+
+.gm-hero-note {
+  margin-top:28px;
+}
+
+.gm-thinking {
+  padding:86px 0;
+}
+
+.gm-closing {
+  padding:94px 0 104px;
+}
+
+/* Detail titles */
+.gm-keyword strong,
+.gm-process-item h3,
+.gm-first-step strong,
+.gm-standard-item strong {
+  color:#2b3234;
+  letter-spacing:-.03em;
+}
+
+.gm-keyword strong {
+  font-size:18px;
+  font-weight:520;
+}
+
+.gm-process-item h3,
+.gm-first-step strong,
+.gm-standard-item strong {
+  font-size:16px;
+  font-weight:520;
+}
+
+.gm-concern h3 {
+  color:#3f555e;
+  font-size:21px;
+  font-weight:520;
+  line-height:1.42;
+  letter-spacing:-.03em;
+}
+
+.gm-keyword span,
+.gm-process-item p,
+.gm-first-step p,
+.gm-concern p {
+  color:#737c7e;
+  font-size:15px;
+  line-height:1.76;
+  letter-spacing:-.03em;
+}
+
+/* Lists and cards — more editorial, less boxed */
+.gm-keyword {
+  padding:26px 24px 28px;
+}
+
+.gm-process-item {
+  grid-template-columns:135px 180px minmax(0,1fr);
+  gap:26px;
+  padding:23px 0;
+}
+
+.gm-first-step {
+  grid-template-columns:175px minmax(0,1fr);
+  gap:26px;
+  padding:21px 16px 21px 46px;
+}
+
+.gm-concern {
+  padding-top:30px;
+  padding-bottom:34px;
+}
+
+.gm-concern-meta {
+  margin-bottom:24px;
+}
+
+.gm-standard-item {
+  grid-template-columns:145px minmax(0,1fr);
+  padding:20px 0;
+}
+
+/* Brand accents */
+.gm-label-icon,
+.gm-concern-icon,
+.gm-hero-note span {
+  color:#5E7681 !important;
+}
+
+.gm-button {
+  height:46px;
+  min-width:154px;
+  padding:0 20px;
+  font-size:12px;
+  font-weight:520;
+  letter-spacing:.03em;
+}
+
+/* Keep image / copy baseline aligned */
+.gm-hero-image,
+.gm-space-gallery figure {
+  border:0;
+}
+
+@media(max-width:1080px){
+  .gm-process-item{grid-template-columns:110px 160px minmax(0,1fr)}
+}
+
+@media(max-width:760px){
+  .gm-brand-page{font-size:16px}
+  .gm-section{padding:72px 0}
+  .gm-hero{padding:72px 0 68px}
+  .gm-display{font-size:clamp(31px,8.7vw,38px);line-height:1.24}
+  .gm-h2{font-size:clamp(23px,6.8vw,28px);line-height:1.42}
+  .gm-lead{font-size:16px;line-height:1.76}
+  .gm-copy{font-size:15px;line-height:1.78}
+  .gm-section-head{margin-bottom:36px}
+  .gm-process-item{grid-template-columns:1fr;gap:6px;padding:20px 0}
+  .gm-first-step{grid-template-columns:1fr;gap:6px;padding-left:40px}
+  .gm-concern h3{font-size:20px}
+}

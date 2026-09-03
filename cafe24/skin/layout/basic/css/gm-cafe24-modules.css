@@ -1,0 +1,54 @@
+/* Healthmi adapters for Cafe24 native modules. Load after gm.css. */
+
+.gm-product-paging{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:56px;font-size:12px}
+.gm-product-paging ol{display:flex;align-items:center;gap:4px}
+.gm-product-paging ol a{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid transparent}
+.gm-product-paging ol a.this,.gm-product-paging ol a:hover{border-color:var(--gm-navy)}
+
+.gm-journal-list{border-top:1px solid var(--gm-line)}
+.gm-journal-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;min-height:86px;border-bottom:1px solid var(--gm-line)}
+.gm-journal-subject{font-size:17px;font-weight:500;letter-spacing:-.025em}
+.gm-journal-date{font-size:11px;color:var(--gm-blue);letter-spacing:.04em}
+
+/* Product detail: keep Cafe24 option/order markup and restyle the native module. */
+body.gm-cafe24 .xans-product-detail{width:min(100%,var(--gm-container));margin:0 auto;padding:96px var(--gm-gutter) 120px}
+body.gm-cafe24 .xans-product-detail .headingArea{margin:0 0 32px;padding:0 0 18px;border-bottom:1px solid var(--gm-line);font-family:var(--gm-font);line-height:1.4}
+body.gm-cafe24 .xans-product-detail .headingArea h2{display:block;color:var(--gm-ink);font-size:30px;font-weight:500;letter-spacing:-.035em}
+body.gm-cafe24 .xans-product-detail .headingArea .icon{display:block;margin-top:10px}
+body.gm-cafe24 .xans-product-detail .detailArea{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);gap:72px;padding:0}
+body.gm-cafe24 .xans-product-detail .imgArea{float:none;width:auto;margin:0}
+body.gm-cafe24 .xans-product-detail .imgArea .keyImg{max-width:none;margin:0}
+body.gm-cafe24 .xans-product-detail .imgArea .keyImg img{width:100%;height:auto}
+body.gm-cafe24 .xans-product-detail .infoArea{float:none;width:auto;margin:0;padding:0}
+body.gm-cafe24 .xans-product-detail .infoArea table{width:100%;border-collapse:collapse;border:0}
+body.gm-cafe24 .xans-product-detail .infoArea th,body.gm-cafe24 .xans-product-detail .infoArea td{padding:12px 0;border:0;border-bottom:1px solid #ecefed;font-family:var(--gm-font);font-size:13px;vertical-align:middle}
+body.gm-cafe24 .xans-product-detail .infoArea th{width:120px;color:var(--gm-muted);font-weight:400;text-align:left}
+body.gm-cafe24 .xans-product-detail .infoArea td{color:var(--gm-ink)}
+body.gm-cafe24 .xans-product-detail select,body.gm-cafe24 .xans-product-detail input[type=text],body.gm-cafe24 .xans-product-detail input[type=number]{min-height:42px;border:1px solid var(--gm-line);background:#fff;padding:0 12px;border-radius:0}
+body.gm-cafe24 .xans-product-detail .totalPrice,body.gm-cafe24 .xans-product-detail #totalProducts{margin-top:24px;font-family:var(--gm-font)}
+body.gm-cafe24 .xans-product-detail .btnArea{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:24px}
+body.gm-cafe24 .xans-product-detail .btnArea a,body.gm-cafe24 .xans-product-detail .btnArea button{min-height:52px;display:flex;align-items:center;justify-content:center;border-radius:0;font-family:var(--gm-font);font-size:13px;font-weight:600}
+body.gm-cafe24 .xans-product-detail .btnArea .btnSubmit,body.gm-cafe24 .xans-product-detail .btnArea [class*=btnSubmit]{background:var(--gm-navy);border-color:var(--gm-navy);color:#fff}
+
+/* Long-form product information keeps Cafe24 content but aligns to the brand grid. */
+body.gm-cafe24 .xans-product-additional{width:min(100%,var(--gm-container));margin:0 auto;padding:0 var(--gm-gutter) 120px;font-family:var(--gm-font)}
+body.gm-cafe24 .xans-product-additional .link{display:flex;justify-content:center;border-top:1px solid var(--gm-line);border-bottom:1px solid var(--gm-line);margin:0 0 56px;padding:0}
+body.gm-cafe24 .xans-product-additional .link li{flex:1;max-width:220px;text-align:center}
+body.gm-cafe24 .xans-product-additional .link a{display:block;padding:18px 10px;font-size:12px;color:var(--gm-muted)}
+body.gm-cafe24 .xans-product-additional .link .selected a{color:var(--gm-navy);font-weight:600}
+body.gm-cafe24 .xans-product-additional #prdDetail img{margin-left:auto;margin-right:auto;max-width:100%;height:auto}
+
+@media(max-width:980px){
+  body.gm-cafe24 .xans-product-detail{padding-top:68px;padding-bottom:84px}
+  body.gm-cafe24 .xans-product-detail .detailArea{grid-template-columns:1fr;gap:38px}
+  body.gm-cafe24 .xans-product-detail .headingArea h2{font-size:25px}
+  body.gm-cafe24 .xans-product-additional{padding-bottom:90px}
+  body.gm-cafe24 .xans-product-additional .link{overflow-x:auto;justify-content:flex-start}
+  body.gm-cafe24 .xans-product-additional .link li{min-width:130px;flex:0 0 auto}
+}
+
+@media(max-width:640px){
+  .gm-journal-row{min-height:72px}.gm-journal-subject{font-size:15px}
+  body.gm-cafe24 .xans-product-detail .btnArea{grid-template-columns:1fr}
+  body.gm-cafe24 .xans-product-detail .infoArea th{width:94px}
+}

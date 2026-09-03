@@ -1,0 +1,197 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<style>
+.gm-about-hero{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);min-height:660px;border-bottom:1px solid var(--gm-line)}
+.gm-about-hero__copy{display:flex;flex-direction:column;justify-content:flex-end;padding:100px max(48px,calc((100vw - 1440px)/2 + 48px)) 82px}
+.gm-about-hero__copy .gm-lead{max-width:620px;margin-top:28px}
+.gm-about-hero__media{min-height:660px;overflow:hidden;background:#eef1ef}
+.gm-about-hero__media img{width:100%;height:100%;object-fit:cover}
+
+.gm-about-view{display:grid;grid-template-columns:.85fr 1.15fr;gap:96px;align-items:start}
+.gm-about-view__copy p+p{margin-top:18px}
+.gm-about-keywords{display:grid;grid-template-columns:repeat(4,1fr);margin-top:54px;border-top:1px solid var(--gm-line);border-bottom:1px solid var(--gm-line)}
+.gm-about-keywords article{min-height:210px;padding:26px 22px;border-right:1px solid var(--gm-line)}
+.gm-about-keywords article:last-child{border-right:0}
+.gm-about-keywords small{font-size:10px;letter-spacing:.12em;color:var(--gm-blue)}
+.gm-about-keywords h3{margin-top:52px;font-size:20px;font-weight:500}
+.gm-about-keywords p{margin-top:8px;color:var(--gm-muted);font-size:14px}
+
+.gm-about-principle{display:grid;grid-template-columns:.82fr 1.18fr;gap:92px;align-items:start}
+.gm-about-principle__quote{padding:44px 0;border-top:1px solid var(--gm-line);border-bottom:1px solid var(--gm-line)}
+.gm-about-principle__quote strong{display:block;font-size:clamp(30px,3.2vw,48px);line-height:1.28;letter-spacing:-.045em;font-weight:500}
+.gm-about-principle__copy p+p{margin-top:18px}
+
+.gm-about-first{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:start}
+.gm-about-first__steps{display:grid;grid-template-columns:repeat(5,1fr);margin-top:44px;border-top:1px solid var(--gm-line);border-bottom:1px solid var(--gm-line)}
+.gm-about-first__steps li{padding:24px 18px;min-height:160px;border-right:1px solid var(--gm-line)}
+.gm-about-first__steps li:last-child{border-right:0}
+.gm-about-first__steps small{color:var(--gm-blue);font-size:10px;letter-spacing:.1em}
+.gm-about-first__steps strong{display:block;margin-top:35px;font-size:16px;font-weight:500}
+
+.gm-about-concerns{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px}
+.gm-about-concern{min-height:300px;padding:30px;border:1px solid var(--gm-line);display:flex;flex-direction:column}
+.gm-about-concern small{font-size:10px;color:var(--gm-blue);letter-spacing:.1em}
+.gm-about-concern h3{margin-top:auto;font-size:24px;font-weight:500}
+.gm-about-concern p{margin-top:12px;color:var(--gm-muted);font-size:14px;line-height:1.8}
+
+.gm-about-people{display:grid;grid-template-columns:.8fr 1.2fr;gap:96px;align-items:start}
+.gm-about-people__points{display:grid;gap:0;border-top:1px solid var(--gm-line)}
+.gm-about-people__points article{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid var(--gm-line)}
+.gm-about-people__points small{color:var(--gm-blue);font-size:10px;letter-spacing:.1em}
+.gm-about-people__points h3{font-size:19px;font-weight:500}
+.gm-about-people__points p{margin-top:7px;color:var(--gm-muted);font-size:14px}
+
+.gm-about-space-grid{display:grid;grid-template-columns:1.25fr .75fr .75fr;gap:12px;margin-top:46px}
+.gm-about-space-grid figure{overflow:hidden;background:#eef1ef;min-height:420px}
+.gm-about-space-grid img{width:100%;height:100%;object-fit:cover}
+
+.gm-about-closing{background:#5E7681;color:#fff}
+.gm-about-closing .gm-eyebrow{color:rgba(255,255,255,.72)}
+.gm-about-closing .gm-lead{color:rgba(255,255,255,.82)}
+.gm-about-closing__inner{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;padding-top:100px;padding-bottom:100px}
+.gm-about-closing .gm-button{border-color:#fff;color:#5E7681;background:#fff}
+
+@media(max-width:1024px){
+  .gm-about-hero{grid-template-columns:1fr;min-height:0}.gm-about-hero__copy{padding:76px 24px 56px}.gm-about-hero__media{min-height:460px}
+  .gm-about-view,.gm-about-principle,.gm-about-first,.gm-about-people{grid-template-columns:1fr;gap:40px}
+  .gm-about-keywords,.gm-about-concerns{grid-template-columns:repeat(2,1fr)}
+  .gm-about-keywords article:nth-child(2){border-right:0}.gm-about-keywords article:nth-child(-n+2){border-bottom:1px solid var(--gm-line)}
+  .gm-about-first__steps{grid-template-columns:1fr}.gm-about-first__steps li{min-height:0;border-right:0;border-bottom:1px solid var(--gm-line)}.gm-about-first__steps li:last-child{border-bottom:0}
+  .gm-about-space-grid{grid-template-columns:1fr 1fr}.gm-about-space-grid figure:first-child{grid-column:1/-1}
+  .gm-about-closing__inner{grid-template-columns:1fr;align-items:start}
+}
+@media(max-width:640px){
+  .gm-about-hero__copy{padding:62px 20px 44px}.gm-about-hero__media{min-height:360px}
+  .gm-about-keywords,.gm-about-concerns,.gm-about-space-grid{grid-template-columns:1fr}
+  .gm-about-keywords article{border-right:0;border-bottom:1px solid var(--gm-line)}.gm-about-keywords article:last-child{border-bottom:0}
+  .gm-about-space-grid figure,.gm-about-space-grid figure:first-child{grid-column:auto;min-height:300px}
+  .gm-about-people__points article{grid-template-columns:56px 1fr}
+}
+</style>
+
+<section class="gm-about-hero">
+  <div class="gm-about-hero__copy">
+    <span class="gm-eyebrow">ABOUT GEONGANGMI</span>
+    <h1 class="gm-display">누구나 시작할 수 있지만,<br>누구에게나 같은 관리를 하지는 않습니다.</h1>
+    <p class="gm-lead">건강미는 안면 윤곽, 체형 밸런스, 부종과 피부 컨디션을 보이는 부위만이 아닌 몸의 연결과 현재 상태를 함께 보며 관리합니다.</p>
+  </div>
+  <figure class="gm-about-hero__media">
+    <img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/3992acfd2779b.png" alt="건강미 공간" fetchpriority="high">
+  </figure>
+</section>
+
+<section class="gm-section">
+  <div class="gm-container">
+    <div class="gm-about-view">
+      <div>
+        <span class="gm-eyebrow">HOW WE SEE</span>
+        <h2 class="gm-h2">보이는 곳보다,<br>달라진 이유를 먼저 봅니다.</h2>
+      </div>
+      <div class="gm-about-view__copy">
+        <p class="gm-lead">불편한 곳과 원인이 있는 곳은 같지 않을 수 있습니다.</p>
+        <p>얼굴이 무거워 보여도 목과 어깨의 긴장이 연결되어 있을 수 있고, 한쪽 체형의 불균형이 다른 부위의 부담으로 이어질 수 있습니다. 건강미는 현재 보이는 고민만을 바로 다루기보다 몸의 연결과 상태를 먼저 확인합니다.</p>
+      </div>
+    </div>
+
+    <div class="gm-about-keywords">
+      <article><small>01 · FACE</small><h3>안면 윤곽</h3><p>얼굴의 좌우 밸런스와 목·어깨·데콜테의 연결까지 함께 봅니다.</p></article>
+      <article><small>02 · BODY</small><h3>체형 밸런스</h3><p>한 부위의 모양보다 전신의 긴장과 좌우 균형을 확인합니다.</p></article>
+      <article><small>03 · SKIN</small><h3>피부 컨디션</h3><p>민감도와 현재 피부 상태에 맞춰 회복 중심의 방향을 정합니다.</p></article>
+      <article><small>04 · DAILY CONDITION</small><h3>오늘의 상태</h3><p>수면, 생활 리듬과 당일 컨디션까지 관리 범위에 반영합니다.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="gm-section gm-section--soft">
+  <div class="gm-container">
+    <div class="gm-section-head">
+      <div><span class="gm-eyebrow">WHY GEONGANGMI</span><h2 class="gm-h2">건강미의 관리는<br>설명에서 시작합니다.</h2></div>
+      <p class="gm-lead">같은 프로그램이어도 그날의 몸 상태에 따라 관리의 범위와 순서는 달라질 수 있습니다.</p>
+    </div>
+    <ol class="gm-process">
+      <li><small>01 · CHECK</small><h3>확인합니다</h3><p>현재 고민과 몸의 상태를 먼저 확인합니다.</p></li>
+      <li><small>02 · EXPLAIN</small><h3>설명합니다</h3><p>왜 이 부위를 함께 보는지 이해할 수 있게 안내합니다.</p></li>
+      <li><small>03 · DESIGN</small><h3>설계합니다</h3><p>개인별로 필요한 부위와 관리 순서를 조정합니다.</p></li>
+      <li><small>04 · CARE</small><h3>관리합니다</h3><p>몸이 받아들이는 속도와 당일 반응에 맞춰 진행합니다.</p></li>
+      <li><small>05 · RECORD</small><h3>기록합니다</h3><p>변화를 다음 관리의 기준으로 이어갑니다.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="gm-section">
+  <div class="gm-container gm-about-principle">
+    <div>
+      <span class="gm-eyebrow">TOUCH = THINKING</span>
+      <div class="gm-about-principle__quote"><strong>터치는 곧<br>생각입니다.</strong></div>
+    </div>
+    <div class="gm-about-principle__copy">
+      <p class="gm-lead">건강미의 손은 정해진 순서대로만 움직이지 않습니다.</p>
+      <p>어디에 긴장이 모여 있는지, 어떤 방향의 터치가 필요한지, 지금 몸이 받아들일 수 있는 강도는 어느 정도인지 살피며 관리합니다.</p>
+      <p>보이는 문제만 빠르게 바꾸기보다 손이 닿는 이유와 순서를 생각하는 것. 그것이 건강미가 테라피를 대하는 기준입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gm-section gm-section--soft">
+  <div class="gm-container">
+    <div class="gm-about-first">
+      <div><span class="gm-eyebrow">FIRST VISIT</span><h2 class="gm-h2">처음이어도 어렵지 않습니다.<br>지금의 고민부터 이야기하면 됩니다.</h2></div>
+      <div><p class="gm-lead">어떤 프로그램을 받아야 할지 미리 정하지 않아도 괜찮습니다. 상담과 상태 확인 후 현재 필요한 방향을 함께 정합니다.</p><p style="margin-top:18px;">첫 관리부터, 내 몸을 이해하는 경험이 시작됩니다.</p></div>
+    </div>
+    <ol class="gm-about-first__steps">
+      <li><small>01</small><strong>고민 상담</strong></li>
+      <li><small>02</small><strong>상태 체크</strong></li>
+      <li><small>03</small><strong>방향 설명</strong></li>
+      <li><small>04</small><strong>맞춤 관리</strong></li>
+      <li><small>05</small><strong>다음 방향 안내</strong></li>
+    </ol>
+  </div>
+</section>
+
+<section class="gm-section">
+  <div class="gm-container">
+    <div class="gm-section-head">
+      <div><span class="gm-eyebrow">CORE CONCERNS</span><h2 class="gm-h2">이런 고민으로<br>건강미를 찾습니다.</h2></div>
+      <a class="gm-text-link" href="/board/free/list.html?board_no=3001">프로그램 보기 <span>→</span></a>
+    </div>
+    <div class="gm-about-concerns">
+      <article class="gm-about-concern"><small>01 · FACE</small><h3>안면 윤곽</h3><p>얼굴만 자극하지 않고 목·어깨·데콜테의 연결까지 함께 봅니다.</p></article>
+      <article class="gm-about-concern"><small>02 · BODY BALANCE</small><h3>체형 비대칭</h3><p>한 부위의 모양보다 몸 전체의 좌우·상하 밸런스를 확인합니다.</p></article>
+      <article class="gm-about-concern"><small>03 · BODY LINE</small><h3>부종·바디 라인</h3><p>무거움과 정체가 느껴지는 범위를 보고 관리 순서를 정합니다.</p></article>
+      <article class="gm-about-concern"><small>04 · SKIN</small><h3>피부 컨디션</h3><p>민감도와 피부 상태를 확인하고 필요한 회복 방향을 구성합니다.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="gm-section gm-section--soft">
+  <div class="gm-container gm-about-people">
+    <div><span class="gm-eyebrow">PEOPLE & JUDGEMENT</span><h2 class="gm-h2">몸을 보는 기준은<br>사람에게서 시작됩니다.</h2></div>
+    <div class="gm-about-people__points">
+      <article><small>01</small><div><h3>상담에서 먼저 듣습니다.</h3><p>현재 가장 불편한 점과 원하는 변화를 충분히 확인합니다.</p></div></article>
+      <article><small>02</small><div><h3>한 부위만 보지 않습니다.</h3><p>윤곽과 체형, 긴장과 순환처럼 서로 연결된 영역을 함께 살핍니다.</p></div></article>
+      <article><small>03</small><div><h3>설명할 수 있는 관리를 지향합니다.</h3><p>왜 이 부위를 보고 어떤 순서로 관리하는지 이해할 수 있도록 안내합니다.</p></div></article>
+      <article><small>04</small><div><h3>방문마다 다시 봅니다.</h3><p>이전 관리와 현재 반응을 비교해 다음 방향을 조정합니다.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="gm-section">
+  <div class="gm-container">
+    <div class="gm-section-head">
+      <div><span class="gm-eyebrow">SPACE</span><h2 class="gm-h2">관리에 집중할 수 있도록<br>공간까지 생각합니다.</h2></div>
+      <a class="gm-text-link" href="/board/free/list.html?board_no=7">지점 안내 <span>→</span></a>
+    </div>
+    <div class="gm-about-space-grid">
+      <figure><img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/0b1dcbe231659.png" alt="건강미 라운지" loading="lazy"></figure>
+      <figure><img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/62544f388c948.png" alt="건강미 프라이빗 공간" loading="lazy"></figure>
+      <figure><img src="https://cdn.imweb.me/upload/S2023030963558ef55ba8e/44953aecd98f0.png" alt="건강미 공간" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="gm-about-closing">
+  <div class="gm-container gm-about-closing__inner">
+    <div><span class="gm-eyebrow">GEONGANGMI</span><h2 class="gm-h2">건강미가 원하는 것은<br>관리받은 순간만의 변화가 아닙니다.</h2><p class="gm-lead" style="margin-top:22px;">내 몸을 조금 더 이해하고, 지금 필요한 관리의 방향을 알게 되는 것. 건강미는 그 과정이 오래 이어질 수 있도록 함께합니다.</p></div>
+    <a class="gm-button" href="https://pf.kakao.com/_HkuJG" target="_blank" rel="noopener">현재 상태부터 상담하기</a>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+:root {
+  /* Brand */
+  --gm-ink: #252b2d;
+  --gm-navy: #3f4c63;
+  --gm-blue: #71878d;
+  --gm-blue-soft: #e8eeee;
+  --gm-ivory: #f4f0e7;
+  --gm-paper: #ffffff;
+  --gm-line: #d9dfdc;
+  --gm-muted: #667477;
+
+  /* Typography */
+  --gm-font-sans: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --gm-font-display: 'Gowun Dodum', 'Pretendard', 'Noto Sans KR', sans-serif;
+  --gm-letter-tight: -0.028em;
+  --gm-letter-body: -0.018em;
+
+  /* Layout */
+  --gm-container: 1440px;
+  --gm-gutter: 48px;
+  --gm-header-h: 88px;
+  --gm-section-y: 112px;
+
+  /* Spacing */
+  --gm-space-1: 8px;
+  --gm-space-2: 12px;
+  --gm-space-3: 16px;
+  --gm-space-4: 24px;
+  --gm-space-5: 32px;
+  --gm-space-6: 48px;
+  --gm-space-7: 64px;
+  --gm-space-8: 88px;
+  --gm-space-9: 112px;
+
+  /* Motion */
+  --gm-ease: cubic-bezier(.2,.7,.2,1);
+  --gm-speed: 220ms;
+}
+
+@media (max-width: 1080px) {
+  :root {
+    --gm-gutter: 24px;
+    --gm-header-h: 72px;
+    --gm-section-y: 84px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gm-gutter: 20px;
+    --gm-section-y: 68px;
+  }
+}
